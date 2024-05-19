@@ -1,0 +1,31 @@
+/* body {
+    font-size: 40px;
+} */
+
+div {
+    background: #f7f1f1;
+    border: 1px solid #000;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+    overflow: scroll;
+    width: 1100px;
+    height: 500px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ============= */
+
+.block {
+    display: inline-block;
+    max-width: 400px;
+    background: #d1b38b;
+    padding: 10px 20px 3px;
+    margin: 10px;
+    width: 300px;
+    height: 200px;
+    border-radius: 10%;
+    box-shadow: inset 2px 2px 5px #7f7676, inset -2px -2px 5px #7f7676;
+}
