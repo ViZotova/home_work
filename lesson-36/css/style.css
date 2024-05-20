@@ -9,6 +9,7 @@
     border: 1px solid #000;
     border-top-left-radius: 5%;
     border-bottom-left-radius: 5%;
+    overflow: auto;
 }
 
 .block {
