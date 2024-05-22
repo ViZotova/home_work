@@ -1,0 +1,11 @@
+table,
+caption,
+tr,
+th,
+td,
+thead,
+tbody,
+tfoot {
+    border: 1px solid #e632e3;
+    width: 200px;
+}
