@@ -6,16 +6,17 @@ body {
 
 /* -------------------- */
 
+.block__figure {
+    position: fixed; 
+    left: 50%;
+    right: 100px;
+    bottom: 50px;
+}
+
 .block__figure-rectangle {
-    width: 530px;
     min-height: 100px;
     background: #edd1d1;
     border-radius: 5px;
-    position: fixed;
-    left: 50%;
-    bottom: 0;
-    margin-right: 50px;
-    margin-bottom: 100px;
 }
 
 .block__figure-circle {
@@ -23,7 +24,7 @@ body {
     height: 100px;
     background: #f10453;
     border-radius: 50%;
-    position: fixed;
-    left: 60%;
-    bottom: 20%;
+    position: absolute;
+    bottom: 40px;
+    right: 70%;
 }
