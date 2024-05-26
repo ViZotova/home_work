@@ -51,6 +51,5 @@ body {
 }
 
 .box:hover span {
-    /* transition-duration: 15s; */
-    transition: all 1s .5s;
+    transition: all 1s .7s;
 }
