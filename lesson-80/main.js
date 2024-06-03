@@ -23,9 +23,12 @@ while (i <= 10) {
     console.log(i)
 }
 
-let x = 10
-while (x >= 1) {
+
+let x = 11
+while (x > 1) {
     x = x - 1
     console.log(x)
+}
+
 }
 
