@@ -1,15 +1,9 @@
 // 1) Создайте функцию, которая в качестве аргумента будет принимать имя, а возвращать строчку ‘Hello “аргумент функции”’.
 
-const userName = ['Vika', 'Alex', 'Max', 'Mary']
-
-function helloName (array, item) {
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] === item) {
-            return `Hello ${item}`
+function helloName (item) {
+    return `Hello ${item}`
         }
-    }
-}
-console.log(helloName(userName, 'Vika'))
+console.log(helloName('Vika'))
 
 //2) Создайте массив чисел, далее создайте функцию, которая будет принимать в качестве аргумента массив чисел. Функция должна перебирать полученный массив и если число больше 10 - выводить это число в консоль.
 
