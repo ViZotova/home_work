@@ -44,7 +44,7 @@ function calc(firstN, secondN, line) {
     }
 }
 
-console.log(calc(1, 3, '+'));
+console.log(calc(1, 3, '+'))
 console.log(calc(2, 3, '-'))
-console.log(calc(5, 10, '*')); 
-console.log(calc(16, 4, '/')); 
+console.log(calc(5, 10, '*'))
+console.log(calc(16, 4, '/'))
