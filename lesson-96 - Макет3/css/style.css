@@ -1,0 +1,215 @@
+/* ==========ОБЩИЕ СТИЛИ======= */
+:root {
+    --general-text: #312C27;
+    --accent-text: #1F1711;
+    --general-bg: #FFF9F4;
+    --accent-bg: #FFE0CB;
+    --accent-color: #FFA55C;
+}
+
+body {
+    font-family: "Montserrat", "Arial", sans-serif;
+    line-height: 1.5;
+    color: var(--general-text);
+    background: var(--general-bg);
+}
+
+.wrapper {
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.container {
+    max-width: 1310px;
+    margin: 0 auto;
+    padding: 0 15px;
+    height: 100%;
+}
+
+.button {
+    /* Text */
+    font-weight: 500;
+    line-height: 1.6; /* 160% */
+    font-size: 16px; /* на всякий случай добавить тк кнопка */
+    color: var(--general-text);
+    /* Кнопка */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--accent-color);    padding: 3px 15px; /* чтобы текст не прилип к кнопке 3tb 15lr */
+    border-radius: 100px; /* при адаптиве не съехало */
+    transition: all .5s;
+}
+
+.button:hover {
+    background: #FF9138;
+}
+
+/* ========================HEADER 1 часть====================== */
+
+.header {
+    background: url('../imges/fons/Rectangle\ 1.png') 50% 100%/cover no-repeat; /*Фон для всего элемента обязательно в кавычках / Позицию чтобы по центру для адаптива (50%) по Х и чтобы низ было видно (100%) по Y / background-size/ убрать повторение*/
+}
+
+.header__top {
+    padding-top: 19px;/*отсутп сверху всех элементов от большего элемента мерим*/
+}
+
+.header__top-inner {
+    display: flex; /*выстраивание в строчку всего*/
+    justify-content: space-between; /*раскидываем логотип и навигацию по бокам*/
+    align-items: flex-end; /*выравнивание по вертикале текста и логотипа по центру*/
+}
+
+.header__logo{
+    max-width: 174px; /*размер логотипа 174 х 60*/
+}
+
+.nav__list {
+    display: flex; /*выстраивание в строчку*/
+    gap: 40px; /*отступы между текстом навигации*/
+}
+
+.nav__link {
+    display: block; /*навигационный блок*/
+    padding: 5px 0; /*пользователю удобнее попасть по ссылке*/
+    position: relative; /*эффект при наведении*/
+    z-index: 1; /*должен быть*/
+}
+
+.nav__link::before { /*при нажатии на ссылку появился эффект*/
+    content: ''; /*псевдо не работает без контента*/
+    position: absolute; /*Двигаем относительно элемента*/
+    top: -8px; /*в макете по -13, но есть паддинг 5*/
+    left: -13px; /*в макете 13*/
+    width: 34px; /*ширина элемента*/
+    height: 34px; /*высота элемента*/
+    background: var(--accent-color); /* цвет элемента*/
+    border-radius: 50%; /*круг при наведении*/
+    z-index: -1; /*элемент за текстом*/
+    opacity: 0; /*скрываем до наведения и будет плавно, лучше чем display:none*/
+    transition: all .5s ;/*плавность на все свойства*/
+}
+
+.nav__link:hover:before { /*по наведению*/
+    opacity: 1; /*появляться по наведению*/
+}
+
+/* ========================HEADER 2 часть====================== */
+
+.hiro {
+    padding: 48px 0 140px; /*Отступы сверху и снизу*/
+}
+
+.hero__inner {
+    display: flex; /*Расположение 2х элементов*/
+    justify-content: space-between;
+    align-items: flex-end /*Выравнивание по низу*/;
+    gap: 30px; /*Чтобы при адаптиве 2 элемента между собой не сталкивались*/
+}
+
+.hero__content {
+    max-width: 519px; /*ограничить контент в тч для переноса текста*/ 
+}
+
+.hero__info { 
+    color: #B197B2; /*Цвет текста*/
+    text-transform: uppercase; /*Верхний регистр*/
+    line-height: 1.6; /*160%*/
+    margin-bottom: 20px; /*отступ вниз*/
+    display: flex; /*элементы в строчку*/
+    flex-wrap: wrap; /*перенос как текст*/
+}
+
+.hero__inner span {
+    display: flex;
+    align-items: center;
+}
+
+.hero__inner span::after { /*псевдо*/
+    content: ''; /*обязательно*/
+    background: #B197B2; /*цвет псевдо*/
+    width: 4px; /*ширина элемента*/
+    height: 4px; /*высота элемента*/
+    border-radius: 50%; /*круг*/
+    display: block; /*блочный внутри строчного*/
+    margin: 0 10px; /*отступ для элементов*/
+}
+
+.hero__inner span:last-child::after { /*когда это последний элемент то у него отсуствует*/
+    content: none; /*обязательно*/
+}
+
+.hero__title {
+    font-family: "Gabriola", serif;
+    font-size: 74px;
+    line-height: 0.82; /*82%*/
+    font-weight: 400;
+    color: var(--accent-text);
+    margin-bottom: 30px; /*отсутп вниз*/ 
+}
+
+.hero__text {
+    margin-bottom: 40px; /*отсутп вниз*/ 
+    max-width: 358px;/*ограничить контент / перенос*/ 
+}
+
+
+.hero__button {
+    max-width: 358px;
+    height: 62px;
+}
+
+.hero__img { /*Сделать адаптивным / Нужно проверять лишнее пространство чтобы оно уменьшалось*/
+    position: relative;
+    margin-right: 247px;
+}
+
+.hero__img-conrol {
+    display: flex; /*Расположить горизонтально*/
+    align-items: center; /* Выравнивание текста и габарита*/
+    gap: 10px; /*Отступ между кнопкой и текстом*/
+    position: absolute; /*Движение относительно img*/
+    max-width: 201px;/*Ограничение по ширине для переноса текста*/
+    bottom: 11%;
+    left: calc(100% - 39px); /*100 - половина круга*/
+}
+
+.hero__img-button {
+    display: flex; /*кнопка с габаритами, если не будет блоком то не применится*/
+    flex-shrink: 0; /*Чтобы кнопка не была ограничена и не сжималась*/
+    align-items: center; /*Выравнивание по середите плей*/
+    justify-content: center; /*Выравнивание по середите плей*/
+    width: 78px;
+    height: 78px;
+    background: var(--accent-bg);
+    box-shadow: 0px 4px 20px rgba(184, 148, 126, 0.3); /*тень*/
+    border-radius: 50%;
+    position: relative;
+}
+
+.hero__img-button img {
+    padding-left: 8%; /*Выравнивание по центру тк нет отсупа*/
+}
+
+.hero__img-button::before {
+    content: '';
+    position: absolute;
+    border: 1px solid var(--accent-color);
+    inset: 5px; /*Аналогично margin / padding универсал*/
+    border-radius: 50%;
+    opacity: 0;
+    transition: all .4s;
+}
+
+.hero__img-button:hover:before {
+    opacity: 1;
+}
+
