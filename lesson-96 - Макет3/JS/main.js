@@ -1,1 +1,0 @@
-//https://fslightbox.com/javascript Для видео
