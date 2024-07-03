@@ -1,945 +1,302 @@
-/* ==========ОБЩИЕ СТИЛИ======= */
-:root {
-    --general-text: #312C27;
-    --accent-text: #1F1711;
-    --general-bg: #FFF9F4;
-    --accent-bg: #FFE0CB;
-    --accent-color: #FFA55C;
-    --transition: all .4s;
-    --border-radius: 20px;
-}
-
-.body {
-    font-family: "Montserrat", "Arial", sans-serif;
-    line-height: 1.5;
-    color: var(--general-text);
-    background: var(--general-bg);
-}
-
-.body--opened-menu {
-    overflow: hidden;
-    /* Управление скролл */
-}
-
-.body--opened-modal {
-    overflow: hidden;
-}
-
-.wrapper {
-    min-height: 100%;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.main {
-    flex-grow: 1;
-}
-
-.main__about {
-    padding: 140px 0;
-}
-
-.container {
-    max-width: 1310px;
-    margin: 0 auto;
-    padding: 0 15px;
-    height: 100%;
-}
-
-.button {
-    /* Text */
-    font-weight: 500;
-    line-height: 1.6;
-    /* 160% */
-    font-size: 16px;
-    /* на всякий случай добавить тк кнопка */
-    color: var(--general-text);
-    /* Кнопка */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--accent-color);
-    padding: 3px 15px;
-    /* чтобы текст не прилип к кнопке 3tb 15lr */
-    border-radius: 100px;
-    /* при адаптиве не съехало */
-    transition: var(--transition);
-    width: 100%;
-    height: 62px;
-}
-
-.button:hover {
-    background: #FF9138;
-}
-
-/* ========================MODAL================================== */
-
-.modal {
-    position: fixed;
-    /*на весь экран*/
-    inset: 0;
-    /*Растянуть по всему экрану*/
-    background: #00000080;
-    /*цвет фона*/
-    z-index: 10;
-    /*чтобы перебить экран и никакие элементы не были кликабельны*/
-    display: flex;
-    align-items: center;
-    /*размещение по центу*/
-    justify-content: center;
-    /*размещение по центру*/
-
-    /*скрыть модалку*/
-    opacity: 0;
-    visibility: hidden;
-    transition: all .6s;
-}
-
-/*Включить модалку*/
-.body--opened-modal .modal {
-    opacity: 1;
-    visibility: visible;
-}
-
-.modal__window {
-    background: var(--general-bg);
-    /*фон*/
-    border-radius: var(--border-radius);
-    padding: 0 60px 60px;
-    position: relative;
-    max-width: 428px;
-}
-
-.modal__cancel {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-.modal__cancel path {
-    transition: var(--transition);
-}
-
-.modal__cancel:hover path,
-.modal__cancel:hover rect {
-    stroke: #AC907A;
-}
-
-.modal__img {
-    margin: -65px 0 15px 13px;
-}
-
-.modal__title {
-    margin-bottom: 10px;
-    font-family: "Gabriola", serif;
-    font-size: 42px;
-    line-height: .9;
-    /*90%*/
-    font-weight: 400;
-    color: var(--accent-text);
-}
-
-.modal__text {
-    margin-bottom: 30px;
-}
-
-.modal__form-lable {
-    margin-bottom: 10px;
-}
-
-.field {
-    /*приписка к почте*/
-    position: relative;
-    display: block;
-}
-
-.field span {
-    position: absolute;
-    top: 12px;
-    left: 28px;
-    font-size: 11px;
-    color: #AC907A;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-}
-
-.field__input {
-    display: block;
-    width: 100%;
-    border: 1px solid #AC907A;
-    border-radius: 100px;
-    padding: 19px 41px 19px 28px;
-    background: #00000000;
-    font-size: 16px;
-}
-
-.field__input:hover {
-    border-color: var(--a);
-}
-
-.field__input::placeholder {
-    color: #AC907A;
-    transition: var(--transition);
-}
-
-.field__input:hover::placeholder {
-    color: var(--accent-color);
-}
-
-.field__input:focus {
-    padding: 26px 42px 12px 28px;
-}
-
-.field__input:focus+span {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* ========================HEADER 1 часть====================== */
-
-.header {
-    background: url('../imges/fons/Rectangle\ 1.png') 50% 100%/cover no-repeat;
-    /*Фон для всего элемента обязательно в кавычках / Позицию чтобы по центру для адаптива (50%) по Х и чтобы низ было видно (100%) по Y / background-size/ убрать повторение*/
-}
-
-.header__top {
-    padding-top: 19px;
-    /*отсутп сверху всех элементов от большего элемента мерим*/
-}
-
-.header__top-inner {
-    display: flex;
-    /*выстраивание в строчку всего*/
-    justify-content: space-between;
-    /*раскидываем логотип и навигацию по бокам*/
-    align-items: flex-end;
-    /*выравнивание по вертикале текста и логотипа по центру*/
-}
-
-.header__logo {
-    max-width: 174px;
-    /*размер логотипа 174 х 60*/
-    z-index: 11;
-    /*Чтобы при ааптиве был виден логотип*/
-}
-
-.header__logo img {
-    width: 100%;
-    /*чтобы изображение слушалось максимальную ширину хедер-лого*/
-}
-
-.nav__list {
-    display: flex;
-    /*выстраивание в строчку*/
-    gap: 4vh 40px;
-    /*чтобы строки уменьшались если устройство меньше*/
-}
-
-.nav__link {
-    display: block;
-    /*навигационный блок*/
-    padding: 5px 0;
-    /*пользователю удобнее попасть по ссылке*/
-    position: relative;
-    /*эффект при наведении*/
-    z-index: 1;
-    /*должен быть*/
-}
-
-.nav__link::before {
-    /*при нажатии на ссылку появился эффект*/
-    content: '';
-    /*псевдо не работает без контента*/
-    position: absolute;
-    /*Двигаем относительно элемента*/
-    top: -8px;
-    /*в макете по -13, но есть паддинг 5*/
-    left: -13px;
-    /*в макете 13*/
-    width: 34px;
-    /*ширина элемента*/
-    height: 34px;
-    /*высота элемента*/
-    background: var(--accent-color);
-    /* цвет элемента*/
-    border-radius: 50%;
-    /*круг при наведении*/
-    z-index: -1;
-    /*элемент за текстом*/
-    opacity: 0;
-    /*скрываем до наведения и будет плавно, лучше чем display:none*/
-    transition: var(--transition);
-    /*плавность на все свойства*/
-}
-
-.nav__link:hover:before {
-    /*по наведению*/
-    opacity: 1;
-    /*появляться по наведению*/
-}
-
-.burger-icon {
-    /* навигация при адаптиве*/
-    display: none;
-    /*Скрываем при дескопе на ширине менее 900px*/
-    /*Высота и ширина больше, чтобы можно было попасть*/
-    width: 50px;
-    /*Ширина общая*/
-    height: 50px;
-    /*Высота общая*/
-    align-items: center;
-    /*DF указывается в медиа*/
-    justify-content: center;
-    /*По центру кликабельной области*/
-    z-index: 11;
-    /*чтобы было видно полоски*/
-}
-
-.burger-icon span,
-.burger-icon span::before,
-.burger-icon span::after {
-    /*Оптимизация кода / выносим одинаковые значения*/
-    display: block;
-    width: 30px;
-    height: 3px;
-    border-radius: 100px;
-    background: var(--general-text);
-    transition: var(--transition);
-    /*Плавные переход менюшки*/
-}
-
-.burger-icon span {
-    /*Навигация для адаптиве / 1 полоска*/
-    position: relative;
-}
-
-.burger-icon span::before,
-.burger-icon span::after {
-    /*Навигация для адаптиве / 2-3 полоска*/
-    content: '';
-    position: absolute;
-    /*Чтобы выпали из общего потока*/
-}
-
-.burger-icon span::before {
-    top: -8px;
-
-}
-
-.burger-icon span::after {
-    bottom: -8px;
-}
-
-/*Закрытие бургера через крестик */
-
-.body--opened-menu .burger-icon span {
-    background: transparent;
-    /*прозрачная палочка*/
-}
-
-.body--opened-menu .burger-icon span::before {
-    top: 0px;
-    /*Схлопываем*/
-    transform: rotate(45deg);
-    /*поворот палочки*/
-}
-
-.body--opened-menu .burger-icon span::after {
-    bottom: 0px;
-    /*Схлопываем*/
-    transform: rotate(-45deg);
-    /*поворот палочки*/
-}
-
-.header__hero {
-    padding: 50px 0 140px;
-}
-
-/* ========================HEADER 2 часть====================== */
-
-.hero {
-    padding: 48px 0 140px;
-    /*Отступы сверху и снизу*/
-}
-
-.hero__inner {
-    display: flex;
-    /*Расположение 2х элементов*/
-    justify-content: space-between;
-    align-items: flex-end
-        /*Выравнивание по низу*/
-    ;
-    gap: 30px;
-    /*Чтобы при адаптиве 2 элемента между собой не сталкивались*/
-}
-
-.hero__content {
-    max-width: 519px;
-    /*ограничить контент в тч для переноса текста*/
-}
-
-.hero__info {
-    color: #B197B2;
-    /*Цвет текста*/
-    text-transform: uppercase;
-    /*Верхний регистр*/
-    line-height: 1.6;
-    /*160%*/
-    margin-bottom: 20px;
-    /*отступ вниз*/
-    display: flex;
-    /*элементы в строчку*/
-    flex-wrap: wrap;
-    /*перенос как текст*/
-}
-
-.hero__inner span {
-    display: flex;
-    align-items: center;
-}
-
-.hero__inner span::after {
-    /*псевдо*/
-    content: '';
-    /*обязательно*/
-    background: #B197B2;
-    /*цвет псевдо*/
-    width: 4px;
-    /*ширина элемента*/
-    height: 4px;
-    /*высота элемента*/
-    border-radius: 50%;
-    /*круг*/
-    display: block;
-    /*блочный внутри строчного*/
-    margin: 0 10px;
-    /*отступ для элементов*/
-}
-
-.hero__inner span:last-child::after {
-    /*когда это последний элемент то у него отсуствует*/
-    content: none;
-    /*обязательно*/
-}
-
-.hero__title {
-    font-family: "Gabriola", serif;
-    font-size: 74px;
-    line-height: 0.82;
-    /*82%*/
-    font-weight: 400;
-    color: var(--accent-text);
-    margin-bottom: 30px;
-    /*отсутп вниз*/
-}
-
-.hero__text {
-    margin-bottom: 40px;
-    /*отсутп вниз*/
-    max-width: 358px;
-    /*ограничить контент / перенос*/
-}
-
-
-.hero__button {
-    max-width: 358px;
-    height: 62px;
-    width: 100%;
-}
-
-.hero__img {
-    /*Сделать адаптивным / Нужно проверять лишнее пространство чтобы оно уменьшалось*/
-    position: relative;
-    margin-right: 247px;
-}
-
-.hero__img>img {
-    /*Растягивание на 100% своего родителя*/
-    max-width: 100%;
-}
-
-.hero__img-conrol {
-    display: flex;
-    /*Расположить горизонтально*/
-    align-items: center;
-    /* Выравнивание текста и габарита*/
-    gap: 10px;
-    /*Отступ между кнопкой и текстом*/
-    position: absolute;
-    /*Движение относительно img*/
-    max-width: 201px;
-    /*Ограничение по ширине для переноса текста*/
-    bottom: 11%;
-    left: calc(100% - 39px);
-    /*100 - половина круга*/
-    text-align: left;
-    /*Он итак слева, но при адаптиве не будет наследования*/
-}
-
-.hero__img-control--mobile {
-    display: none;
-}
-
-.hero__img-button {
-    display: flex;
-    /*кнопка с габаритами, если не будет блоком то не применится*/
-    flex-shrink: 0;
-    /*Чтобы кнопка не была ограничена и не сжималась*/
-    align-items: center;
-    /*Выравнивание по середите плей*/
-    justify-content: center;
-    /*Выравнивание по середите плей*/
-    width: 78px;
-    height: 78px;
-    background: var(--accent-bg);
-    box-shadow: 0px 4px 20px rgba(184, 148, 126, 0.3);
-    /*тень*/
-    border-radius: 50%;
-    position: relative;
-}
-
-.hero__img-button img {
-    padding-left: 8%;
-    /*Выравнивание по центру тк нет отсупа*/
-}
-
-.hero__img-button::before {
-    content: '';
-    position: absolute;
-    border: 1px solid var(--accent-color);
-    inset: 5px;
-    /*Аналогично margin / padding универсал*/
-    border-radius: 50%;
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.hero__img-button:hover:before {
-    opacity: 1;
-}
-
-/* ========================ABOUT====================== */
-
-
-.about__inner {
-    display: grid;
-    /*чтобы 2 элемента были равны*/
-    grid-template-columns: 1fr 1.05fr;
-    /*2 колонки*/
-    gap: 53px;
-    /*отступы между элементами*/
-}
-
-.about__img {
-    border-radius: var(--border-radius);
-    /*без overflow скругления быть не может*/
-    overflow: hidden;
-    position: relative;
-    /*для contrlol*/
-}
-
-.about__img>img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% 50%;
-}
-
-.about__img-control {
-    position: absolute;
-    bottom: 4.7%;
-    /*25px*/
-    left: 5%;
-    /*30px*/
-    display: flex;
-    /*иконка относительно текста*/
-    align-items: center;
-    gap: 10px;
-    /*отступ друг от друга*/
-    max-width: 299px;
-    /*ширина всей кнопки*/
-    text-align: left;
-    background: #957b97e6;
-    /*фон для кнопки подарка*/
-    border-radius: var(--border-radius);
-    padding: 15px 20px;
-    color: var(--general-bg);
-}
-
-.about__img-button {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 78px;
-    height: 78px;
-    border-radius: 50%;
-    background: var(--general-bg);
-    box-shadow: 0 4px 20px rgba(184, 148, 126, .3);
-    position: relative;
-}
-
-.about__img-button::before {
-    content: '';
-    position: absolute;
-    inset: 5px;
-    border-radius: 50%;
-    border: 1px solid #CEAAD0;
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.about__img-button:hover::before {
-    opacity: 1;
-}
-
-.about__heading {
-    margin-bottom: 30px;
-}
-
-.about__title {
-    font-family: "Gabriola", serif;
-    font-size: 74px;
-    line-height: 0.82;
-    /*82%*/
-    font-weight: 400;
-    color: var(--accent-text);
-
-}
-
-.about__text {
-    margin-bottom: 40px;
-}
-
-.about__grid {
-    display: grid;
-    gap: 32px;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.about__grid-item {
-    background: var(--accent-bg);
-    border-radius: var(--border-radius);
-    padding: 29px 24px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.about__grid-img {
-    border: 1px solid var(--general-text);
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    flex-shrink: 0;
-    /*чтобы элемент не уменьшался*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/*====================FOOTER=============================*/
-
-.footer {
-    background: #AB8261;
-    /*общий фон*/
-    padding: 60px 0 66px;
-    /*поиенли отсуп с 30 до 60 чтобы все снизить, а логотипу сделать - отступ*/
-    /*общий отступ*/
-    color: var(--general-bg);
-    /*Цвет для всех общий*/
-
-}
-
-.footer__inner {
-    display: grid;
-    /*Колонки*/
-    gap: 40px 15px;
-    /*Отступ между строками*/
-    /*чтобы элементы никода не слиплись*/
-    justify-content: space-between;
-    grid-template-columns: .9fr .9fr 1.1fr auto;
-    /*Размеры колонок*/
-}
-
-.footer__col:first-child {
-    margin-top: -30px;
-    /*так как снизили колонки - нужно поднять логотип*/
-}
-
-.footer__logo {
-    display: block;
-    /*Строчный элемент*/
-    max-width: 241px;
-    /*Максимальная ширина*/
-}
-
-.footer__logo img {
-    width: 100%;
-    /*Слушет максимальную ширину*/
-}
-
-.footer__logo-text {
-    margin-bottom: 20px;
-    /*Отступ текста от соц сетей*/
-}
-
-.socials {
-    line-height: 0;
-    /*Влияет на размер футера нужно обнулить / но никак не слияет на ссылки соц сетей*/
-}
-
-.socials__list {
-    display: flex;
-    /*в строку*/
-    gap: 15px;
-    /*Отступ между иконками*/
-}
-
-.socials__link path {
-    transition: var(--transition);
-}
-
-.socials__link:hover path {
-    fill: var(--accent-color);
-    /*При наведении на svg*/
-}
-
-.footer__col-list {
-    margin-top: -5px;
-    /*так как всему задано по 5 */
-}
-
-.footer__col-item {
-    margin-bottom: 10px;
-    /*так как добавлены падинги по 5*/
-}
-
-.footer__col-item:last-child {
-    margin-bottom: 0;
-    /*отмена у последнего*/
-}
-
-.footer__col-link {
-    display: block;
-    /*Превратить список в блок*/
-    padding: 5px 0;
-    /*Сделать отступы между списком*/
-    position: relative;
-    z-index: 1;
-}
-
-/*При наведении сделать кружки*/
-.footer__col-link::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: -13px;
-    z-index: -1;
-    width: 34px;
-    height: 34px;
-    background: var(--accent-color);
-    border-radius: 50%;
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.footer__col-link:hover::before {
-    opacity: 1;
-}
-
-.footer__contact-item {
-    margin-bottom: 10px;
-    /*От иконок отсутп вниз*/
-}
-
-.footer__contact-item:last-child {
-    margin-bottom: 0;
-}
-
-.footer__contact-item {
-    margin-bottom: 10px;
-    /*От иконок отсутп вниз*/
-}
-
-.footer__col-tel {
-    margin-bottom: 47px;
-}
-
-.footer__col-number {
-    display: block;
-    /*блоком со след строки*/
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 1.6;
-    /*160%*/
-    transition: var(--transition);
-}
-
-.footer__col-tel:hover {
-    color: var(--accent-color);
-}
-
-.footer__col-copy {
-    color: #DEC5B1;
-}
-
-/* ====================MEDIA/AДАПТИВ=====до 320========= */
-
-@media (max-width: 1200px) {
-
-    /* ===HEADER== */
-    .hero__img {
-        margin: 0;
-        /*Отмена отступа*/
-        max-width: 377px;
-        /*Максимальная ширина изображения*/
-    }
-
-    /*Воспроизведение ниже изображения*/
-    .hero__img-conrol {
-        position: static;
-        /*перенос вниз*/
-        max-width: nine;
-        /*убираем максимальную ширину*/
-        margin-top: 30px;
-        /*отсуп от изображения к кнопке*/
-    }
-
-    /* ==FOOTER== */
-    .footer__inner {
-        justify-content: space-between;
-        grid-template: repeat(2, auto) / repeat(3, auto);
-    }
-
-    .footer__col:last-child {
-        grid-column: 1 / -1;
-        text-align: center;
-    }
-}
-
-@media (max-width: 900px) {
-
-    /* ===HEADER==== */
-    /* Бургер меню - 3 полоски при нажатии - выпадает навигация Добавить после навигации в html чтобы было справа */
-    .nav {
-        /*Скрываем навигацию*/
-        position: fixed;
-        background: var(--general-bg);
-        inset: 0;
-        /*чтобы растяжение было по всему экрану*/
-        z-index: 10;
-        /*Виден только список*/
-        padding: 26vh 15px 30px;
-        /*отступы для менюшки*/
-        font-size: 30px;
-        /*Шрифт для всего блока*/
-
-        /*Скрытие меню, а откроются в модификаторе*/
-        transform: translateY(-50%);
-        /*сделать отсуп для появления меню сверху*/
-        opacity: 0;
-        /*чтобы появлялось в момент нажатия*/
-        visibility: hidden;
-        /*чтобы полностью скрыть из инструмента разработчика/ чтобы nav пропал при наведении в инструменте разработчика/ используется часто с opacity*/
-        transition: var(--transition);
-    }
-
-    .nav__link {
-        text-align: center;
-    }
-
-    .nav__list {
-        flex-direction: column;
-        /*В столбик*/
-        align-items: center;
-        /*По центру*/
-    }
-
-    .body--opened-menu .nav {
-        /*когда нажимаем на иконку бургера у body будет появляться модификатор*/
-        transform: translateY(0%);
-        /*сделать отсуп для появления меню сверху*/
-        opacity: 1;
-        /*чтобы появлялось в момент нажатия*/
-        visibility: visible;
-        /*чтобы полностью скрыть из инструмента разработчика/ чтобы nav пропал при наведении в инструменте разработчика/ используется часто с opacity*/
-    }
-
-    .burger-icon {
-        display: flex;
-        /*чтобы полоска была посредине*/
-    }
-
-    /* ====FOOTER=== */
-
-    .footer__inner {
-        justify-content: center;
-        /*по центру*/
-        grid-template: none;
-        text-align: center;
-        /*по центру*/
-        gap: 0;
-        /*отмена всех отступов для индивидуальных отсутпов*/
-    }
-
-    .footer__col:first-child {
-        /*выравнивание по центру*/
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 40px;
-        /*отступ*/
-    }
-
-    .footer__col:nth-child(2) {
-        margin-bottom: 40px;
-        /*отступы*/
-    }
-
-    .footer__col:nth-child(3) {
-        margin-bottom: 10px;
-        /*отсутпы*/
-    }
-}
-
-@media (max-width: 800px) {
-
-    /*Исключить изображение и видео из мобильной версии / При этом добавить просмотр видео после текста в html*/
-    .hero__img {
-        display: none;
-    }
-
-    .hero__img-control--mobile {
-        display: flex;
-        margin: 0 0 30px;
-        /*Появится кнопка воспроизведения*/
-    }
-
-    .hero__content {
-        display: flex;
-        flex-direction: column;
-        /*Элементы выстраиваются сверху вниз*/
-        align-items: center;
-        text-align: center;
-        max-width: none;
-        width: 100%;
-        /*Иначе растягивается по тексту заголовка*/
-    }
-
-
-}
-
-@media (max-width: 600px) {
-    .header__hero {
-        padding-bottom: 80px;
-    }
-
-    .hero__title {
-        font-size: 12vw;
-    }
-}
+<!-- https://www.figma.com/design/EpfKPlwG7H64PTdgFTyfn8/Макет-№3.-Арокен?node-id=41-150&t=7glIkQSAp9oCC5Qo-0 -->
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wake & Bake</title>
+    <link href="css/fonts.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="body">
+    <div class="wrapper">
+        <header class="header"> <!--делится на 2 части -->
+            <div class="header__top"> <!-- 1 часть -->
+                <div class="container"> <!-- общая обертка -->
+                    <div class="header__top-inner"> <!-- строка  -->
+                        <a class="header__logo" href="#">
+                            <img src="imges/icon/logoD.svg" alt="Логотип компании"> <!-- 1 элемент - Логотип -->
+                        </a>
+                        <nav class="nav"> <!-- 2 элемент - Навигация -->
+                            <ul class="nav__list"> <!-- Навигационный лист -->
+                                <li class="nav__item"> <!-- 1 список навигации -->
+                                    <a class="nav__link" href="#">Программа обучения</a>
+                                </li>
+                                <li class="nav__item"> <!-- 2 список навигации -->
+                                    <a class="nav__link" href="#">Галерея</a>
+                                </li>
+                                <li class="nav__item"> <!-- 3 список навигации -->
+                                    <a class="nav__link" href="#">Отзывы</a>
+                                </li>
+                                <li class="nav__item"> <!-- 4 список навигации -->
+                                    <a class="nav__link" href="#">Контакты</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <a class="burger-icon" href="#"> <!--Ссылкой или кнопкой-->
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <section class="header__hero hero"> <!-- 2 часть -->
+                <div class="container"> <!-- Общая обертка -->
+                    <div class="hero__inner"> <!-- расположение элементов по горизонтали -->
+                        <div class="hero__content"> <!-- hero__body/ 1 часть элементов -->
+                            <div class="hero__info"> <!-- Текст до заголовка -->
+                                <span>Старт</span>
+                                <!-- есть еще элемент между ними и будет появляться за исключением последнего span / если захотят еще добавить дату то точка тоже будет -->
+                                <span>26.06.2023</span>
+                            </div>
+                            <h1 class="hero__title title">Научись печь торты и десерты с нуля</h1> <!-- Заголовок -->
+                            <p class="hero__text">За 8 практических занятий ты получишь новые возможности для
+                                самореализации и любимое дело</p> <!-- Текст -->
+                            <div class="hero__img-conrol hero__img-control--mobile">
+                                <a class="hero__img-button" data-fslightbox href="media/cake.mp4" href="#">
+                                    <img src="imges/icon/play.svg" alt="">
+                                </a>
+                                Посмотри, как готовятся наши торты
+                            </div>
+                            <a class="hero__button button" href="#"> <!-- Кнопка ссылка / повторяется --> Записаться на
+                                курс
+                            </a>
+                        </div>
+                        <div class="hero__img"> <!--  2 часть элементов -->
+                            <img src="imges/woman-1.png" alt="Девушка с тортом">
+                            <div class="hero__img-conrol">
+                                <!-- Кнопка по нажатию на которую идет видео в новом окошке -->
+                                <a class="hero__img-button" data-fslightbox="video" href="media/cake.mp4" href="#">
+                                    <!-- Ссылка на окрытие окошка для воспроизведения видео -->
+                                    <img src="imges/icon/play.svg"
+                                        alt=""><!-- Добавление кнопки воспроизведения в формате img в ссылку / не svg тк меняться не будет / Костылем добавить видео через data-fslightbox-->
+                                </a>
+                                Посмотри, как готовятся наши торты
+                                <!-- надпись рядом с элементом можно никак не оборачивать -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+        <main class="main">
+            <!-- О НАС -->
+            <section class="main__about about">
+                <div class="container">
+                    <div class="about__inner"> <!-- flex -->
+                        <div class="about__img">
+                            <img src="imges/woman-2.jpeg" alt="Девушка пекарь с тортом в руках">
+                            <div class="about__img-control">
+                                <a class="about__img-button" href="#">
+                                    <img src="imges/icon/gift.svg" alt="">
+                                </a>
+                                Нажми на подарок, чтобы получить наш фирменный рецепт
+                            </div>
+                        </div>
+                        <div class="about__body">
+                            <div class="about__heading">
+                                <h2 class="title">Наша школа —</h2>
+                                <p class="about__title-text">это уютный дом для начинающих кондитеров</p>
+                            </div>
+                            <p class="about__text">
+                                С нами ты погрузишься в удивительный мир кондитерского искусства,
+                                получишь новые знания и профессиональные навыки! Обретёшь веру в свои силы, научишься
+                                приготовлению разнообразных современных и классических десертов
+                            </p>
+                        </div>
+                        <ul class="about__grid">
+                                <li class="about__grid-item">
+                                    <div class="about__grid-img">
+                                        <img src="imges/icon/chef-hat-heart.svg" alt="">
+                                    </div>
+                                    <p class="about__grig-text">Живое общение с наставниками и одногруппниками</p>
+                                </li>
+                                <li class="about__grid-item">
+                                    <div class="about__grid-img">
+                                        <img src="imges/icon/chef-hat-heart.svg" alt="">
+                                    </div>
+                                    <p class="about__grig-text">Предоставление всех необходимых материалов</p>
+                                </li>
+                                <li class="about__grid-item">
+                                    <div class="about__grid-img">
+                                        <img src="imges/icon/chef-hat-heart.svg" alt="">
+                                    </div>
+                                    <p class="about__grig-text">Небольшие группы до 6 человек</p>
+                                </li>
+                                <li class="about__grid-item">
+                                    <div class="about__grid-img">
+                                        <img src="imges/icon/chef-hat-heart.svg" alt="">
+                                    </div>
+                                    <p class="about__grig-text">Большие аудитории для обучения</p>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ПРОГРАММА -->
+            <section class="main__program program">
+                <div class="container">
+                    <h2 class="program__title title">
+                                Программа обучения
+                    </h2>
+                    <div class="program__top">
+                        <p class="program__text">
+                                Продолжительность курса — 4 недели <br> Программа обучения состоит из 8 модулей <br> На каждое занятие отводится по 6 часов
+                            </p>
+                        <ul class="tab-conrols">
+                            <li class="tab-conrols__item">
+                                <a class="tab-conrols__link tab-conrols__link--active" href="#tab1">
+                                    Неделя 1
+                                </a>
+                            </li>
+                            <li class="tab-conrols__item">
+                                <a class="tab-conrols__link" href="#tab2">
+                                    Неделя 2
+                                </a>
+                            </li>
+                            <li class="tab-conrols__item">
+                                <a class="tab-conrols__link" href="#tab3">
+                                    Неделя 3
+                                </a>
+                            </li>
+                            <li class="tab-conrols__item">
+                                <a class="tab-conrols__link" href="#tab4">
+                                    Неделя 4
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Аккардион c id для связки и блоком чтобы переиспользовать -->
+                    <div class="tab-content" id="tab1">1</div>
+                    <div class="tab-content" id="tab2">2</div>
+                    <div class="tab-content" id="tab3">3</div>
+                    <div class="tab-content" id="tab4">4</div>
+                </div>
+            </section>
+        </main>
+
+    <footer class="footer">
+        <div class="container"> <!--для flex-->
+            <div class="footer__inner"> <!--Для грид-->
+                <div class="footer__col">
+                    <a class="footer__logo" href="#">
+                        <img src="imges/icon/logoW.svg" alt="Логотип компании">
+                    </a>
+                    <p class="footer__logo-text">
+                        Школа кондитерского искусства
+                    </p>
+                    <address class="socials">
+                        <ul class="socials__list"> <!--Если не дублируется лучше сделать блоком / не по БЭМ-->
+                            <li class="socials__item">
+                                <a class="socials__link" href="#">
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M24 10.5C24 10.1022 24.158 9.72064 24.4393 9.43934C24.7206 9.15804 25.1022 9 25.5 9C25.8978 9 26.2794 9.15804 26.5607 9.43934C26.842 9.72064 27 10.1022 27 10.5C27 10.8978 26.842 11.2794 26.5607 11.5607C26.2794 11.842 25.8978 12 25.5 12C25.1022 12 24.7206 11.842 24.4393 11.5607C24.158 11.2794 24 10.8978 24 10.5Z"
+                                            fill="#FFF9F4" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M18 10.875C16.1103 10.875 14.2981 11.6257 12.9619 12.9619C11.6257 14.2981 10.875 16.1103 10.875 18C10.875 19.8897 11.6257 21.7019 12.9619 23.0381C14.2981 24.3743 16.1103 25.125 18 25.125C19.8897 25.125 21.7019 24.3743 23.0381 23.0381C24.3743 21.7019 25.125 19.8897 25.125 18C25.125 16.1103 24.3743 14.2981 23.0381 12.9619C21.7019 11.6257 19.8897 10.875 18 10.875ZM13.125 18C13.125 16.7071 13.6386 15.4671 14.5529 14.5529C15.4671 13.6386 16.7071 13.125 18 13.125C19.2929 13.125 20.5329 13.6386 21.4471 14.5529C22.3614 15.4671 22.875 16.7071 22.875 18C22.875 19.2929 22.3614 20.5329 21.4471 21.4471C20.5329 22.3614 19.2929 22.875 18 22.875C16.7071 22.875 15.4671 22.3614 14.5529 21.4471C13.6386 20.5329 13.125 19.2929 13.125 18Z"
+                                            fill="#FFF9F4" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M25.8871 4.24833C20.6451 3.66722 15.355 3.66722 10.1131 4.24833C7.09508 4.58583 4.65758 6.96333 4.30358 9.99633C3.68168 15.3132 3.68168 20.6845 4.30358 26.0013C4.65758 29.0343 7.09358 31.4118 10.1131 31.7493C15.3551 32.3298 20.6451 32.3298 25.8871 31.7493C28.9051 31.4118 31.3426 29.0343 31.6966 26.0013C32.3186 20.6845 32.3186 15.3132 31.6966 9.99633C31.3426 6.96333 28.9066 4.58583 25.8871 4.24833ZM10.3621 6.48333C15.4385 5.92064 20.5616 5.92064 25.6381 6.48333C27.6331 6.70833 29.2306 8.28183 29.4631 10.2588C30.0645 15.4013 30.0645 20.5964 29.4631 25.7388C29.3428 26.7064 28.8999 27.6052 28.2058 28.29C27.5118 28.9747 26.6072 29.4056 25.6381 29.5128C20.5616 30.0756 15.4385 30.0756 10.3621 29.5128C9.39299 29.4056 8.48836 28.9747 7.79432 28.29C7.10027 27.6052 6.65734 26.7064 6.53708 25.7388C5.93566 20.5964 5.93566 15.4013 6.53708 10.2588C6.65734 9.29127 7.10027 8.3925 7.79432 7.70771C8.48836 7.02292 9.39299 6.59059 10.3621 6.48333Z"
+                                            fill="#FFF9F4" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a class="socials__link" href="#">
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M33.75 17.902C33.75 17.8246 33.75 17.7367 33.7465 17.6348C33.743 17.35 33.7359 17.0301 33.7289 16.6891C33.7008 15.7082 33.6516 14.7309 33.5742 13.8098C33.4688 12.5406 33.3141 11.4824 33.1031 10.6879C32.8805 9.85873 32.4442 9.10251 31.8377 8.49483C31.2313 7.88715 30.476 7.44928 29.6473 7.225C28.6523 6.95781 26.7047 6.79258 23.9625 6.69062C22.6582 6.64141 21.2625 6.60977 19.8668 6.59219C19.3781 6.58516 18.9246 6.58164 18.5168 6.57812H17.4832C17.0754 6.58164 16.6219 6.58516 16.1332 6.59219C14.7375 6.60977 13.3418 6.64141 12.0375 6.69062C9.29531 6.79609 7.34414 6.96133 6.35273 7.225C5.52375 7.44873 4.76813 7.88641 4.1616 8.49418C3.55507 9.10195 3.11892 9.85846 2.89688 10.6879C2.68242 11.4824 2.53125 12.5406 2.42578 13.8098C2.34844 14.7309 2.29922 15.7082 2.27109 16.6891C2.26055 17.0301 2.25703 17.35 2.25352 17.6348C2.25352 17.7367 2.25 17.8246 2.25 17.902V18.0988C2.25 18.1762 2.25 18.2641 2.25352 18.366C2.25703 18.6508 2.26406 18.9707 2.27109 19.3117C2.29922 20.2926 2.34844 21.2699 2.42578 22.191C2.53125 23.4602 2.68594 24.5184 2.89688 25.3129C3.34688 26.9969 4.66875 28.3258 6.35273 28.7758C7.34414 29.043 9.29531 29.2082 12.0375 29.3102C13.3418 29.3594 14.7375 29.391 16.1332 29.4086C16.6219 29.4156 17.0754 29.4191 17.4832 29.4227H18.5168C18.9246 29.4191 19.3781 29.4156 19.8668 29.4086C21.2625 29.391 22.6582 29.3594 23.9625 29.3102C26.7047 29.2047 28.6559 29.0395 29.6473 28.7758C31.3312 28.3258 32.6531 27.0004 33.1031 25.3129C33.3176 24.5184 33.4688 23.4602 33.5742 22.191C33.6516 21.2699 33.7008 20.2926 33.7289 19.3117C33.7395 18.9707 33.743 18.6508 33.7465 18.366C33.7465 18.2641 33.75 18.1762 33.75 18.0988V17.902ZM31.2188 18.0848C31.2188 18.1586 31.2188 18.2395 31.2152 18.3344C31.2117 18.6086 31.2047 18.9109 31.1977 19.2379C31.173 20.173 31.1238 21.1082 31.05 21.9766C30.9551 23.1086 30.8215 24.0367 30.6562 24.659C30.4383 25.4711 29.7984 26.1145 28.9898 26.3289C28.2516 26.5258 26.3918 26.684 23.8641 26.7789C22.5844 26.8281 21.2062 26.8598 19.8316 26.8773C19.35 26.8844 18.9035 26.8879 18.5027 26.8879H17.4973L16.1684 26.8773C14.7937 26.8598 13.4191 26.8281 12.1359 26.7789C9.6082 26.6805 7.74492 26.5258 7.01016 26.3289C6.20156 26.1109 5.56172 25.4711 5.34375 24.659C5.17852 24.0367 5.04492 23.1086 4.95 21.9766C4.87617 21.1082 4.83047 20.173 4.80234 19.2379C4.7918 18.9109 4.78828 18.6051 4.78477 18.3344C4.78477 18.2395 4.78125 18.1551 4.78125 18.0848V17.916C4.78125 17.8422 4.78125 17.7613 4.78477 17.6664C4.78828 17.3922 4.79531 17.0898 4.80234 16.7629C4.82695 15.8277 4.87617 14.8926 4.95 14.0242C5.04492 12.8922 5.17852 11.9641 5.34375 11.3418C5.56172 10.5297 6.20156 9.88633 7.01016 9.67188C7.74844 9.475 9.6082 9.3168 12.1359 9.22187C13.4156 9.17266 14.7937 9.14102 16.1684 9.12344C16.65 9.11641 17.0965 9.11289 17.4973 9.11289H18.5027L19.8316 9.12344C21.2062 9.14102 22.5809 9.17266 23.8641 9.22187C26.3918 9.32031 28.2551 9.475 28.9898 9.67188C29.7984 9.88984 30.4383 10.5297 30.6562 11.3418C30.8215 11.9641 30.9551 12.8922 31.05 14.0242C31.1238 14.8926 31.1695 15.8277 31.1977 16.7629C31.2082 17.0898 31.2117 17.3957 31.2152 17.6664C31.2152 17.7613 31.2188 17.8457 31.2188 17.916V18.0848ZM14.8711 22.7113L23.0273 17.9652L14.8711 13.2895V22.7113Z"
+                                            fill="#FFF9F4" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a class="socials__link" href="#">
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M35.1075 25.2974C34.2915 23.6541 33.2163 22.1529 31.923 20.8514C31.4905 20.3626 31.0376 19.8922 30.5655 19.4414L30.5085 19.3859C30.3332 19.2157 30.1602 19.0432 29.9895 18.8684C31.7574 16.4101 33.2702 13.778 34.5045 11.0129L34.554 10.9019L34.5885 10.7849C34.752 10.2404 34.938 9.20545 34.278 8.26945C33.594 7.30345 32.5005 7.12945 31.767 7.12945H28.3965C27.6908 7.09729 26.9929 7.2892 26.4029 7.67771C25.8128 8.06623 25.3608 8.63143 25.1115 9.29245C24.3861 11.0199 23.478 12.6648 22.4025 14.1989V10.2494C22.4025 9.73945 22.3545 8.88445 21.807 8.16445C21.153 7.30045 20.2065 7.12945 19.5495 7.12945H14.2005C13.5025 7.11339 12.8251 7.36639 12.3085 7.83606C11.7919 8.30573 11.4758 8.95609 11.4255 9.65245L11.421 9.71995V9.78745C11.421 10.5149 11.709 11.0519 11.94 11.3894C12.0435 11.5409 12.153 11.6789 12.2235 11.7659L12.2385 11.7854C12.3135 11.8784 12.363 11.9399 12.4125 12.0089C12.5445 12.1859 12.732 12.4619 12.786 13.1729V15.3824C11.7123 13.5844 10.8319 11.6778 10.1595 9.69445L10.1475 9.66145L10.1355 9.62995C9.9525 9.15145 9.66 8.45545 9.0735 7.92445C8.3895 7.30195 7.5795 7.12945 6.843 7.12945H3.423C2.6775 7.12945 1.779 7.30345 1.1085 8.00995C0.45 8.70595 0.375 9.53995 0.375 9.98095V10.1819L0.417 10.3769C1.36395 14.7731 3.31535 18.8905 6.1185 22.4069C7.40006 24.4279 9.13993 26.1184 11.197 27.3412C13.254 28.564 15.5703 29.2847 17.958 29.4449L18.0195 29.4494H18.0825C19.1715 29.4494 20.307 29.3549 21.1605 28.7864C22.311 28.0184 22.4025 26.841 22.4025 26.2529V24.5459C22.698 24.7859 23.064 25.1069 23.5125 25.5389C24.0555 26.0819 24.4875 26.5529 24.858 26.9639L25.056 27.1829C25.344 27.5039 25.6275 27.8204 25.8855 28.0799C26.2095 28.4054 26.61 28.7639 27.111 29.0294C27.6555 29.3159 28.227 29.4464 28.833 29.4464H32.2545C32.976 29.4464 34.0095 29.2754 34.737 28.4324C35.529 27.5144 35.469 26.3879 35.22 25.5794L35.175 25.4339L35.1075 25.2974ZM26.5275 25.4564C26.0626 24.9368 25.5839 24.4296 25.092 23.9354L25.0875 23.9309C23.052 21.9689 22.1025 21.6284 21.4305 21.6284C21.072 21.6284 20.6775 21.6674 20.421 21.9884C20.3055 22.1416 20.2298 22.3209 20.2005 22.5104C20.1643 22.7305 20.1483 22.9535 20.1525 23.1764V26.2529C20.1525 26.6354 20.0895 26.7959 19.9125 26.9129C19.677 27.0704 19.1745 27.1979 18.096 27.1979C16.0473 27.0585 14.061 26.4349 12.3003 25.3783C10.5396 24.3216 9.05478 22.8622 7.968 21.1199L7.956 21.1004L7.941 21.0824C5.32967 17.8322 3.50977 14.0193 2.625 9.94495C2.631 9.74995 2.673 9.63145 2.742 9.55945C2.8125 9.48445 2.985 9.37945 3.423 9.37945H6.843C7.2225 9.37945 7.4205 9.46345 7.563 9.59095C7.722 9.73795 7.863 9.98545 8.031 10.4264C8.871 12.8954 10.005 15.2054 11.0805 16.9019C11.6175 17.7509 12.1455 18.4574 12.6225 18.9569C12.861 19.2059 13.0935 19.4129 13.317 19.5599C13.5315 19.7009 13.776 19.8134 14.028 19.8134C14.16 19.8134 14.3145 19.7984 14.463 19.7339C14.6234 19.6631 14.7554 19.5406 14.838 19.3859C14.9925 19.1039 15.036 18.6884 15.036 18.1439V13.0844C14.9565 11.8574 14.586 11.1659 14.226 10.6754C14.1531 10.5773 14.0781 10.4808 14.001 10.3859L13.9815 10.3619C13.9175 10.2843 13.8565 10.2042 13.7985 10.1219C13.7247 10.0302 13.6802 9.91834 13.671 9.80095C13.6828 9.68175 13.7396 9.57156 13.83 9.49293C13.9203 9.41429 14.0373 9.37316 14.157 9.37795H19.5495C19.8585 9.37795 19.962 9.45295 20.0145 9.52345C20.0895 9.62095 20.1525 9.82345 20.1525 10.2494V17.0414C20.1525 17.8484 20.5245 18.3944 21.0645 18.3944C21.6855 18.3944 22.134 18.0179 22.917 17.2349L22.9305 17.2199L22.9425 17.2064C24.699 15.0649 26.134 12.6788 27.2025 10.1234L27.2085 10.1054C27.2888 9.87968 27.4407 9.68637 27.6411 9.55502C27.8416 9.42366 28.0794 9.36148 28.3185 9.37795H31.7685C32.2365 9.37795 32.3895 9.49795 32.4405 9.56845C32.493 9.64345 32.5305 9.80395 32.4405 10.1189C31.2084 12.8735 29.6852 15.4883 27.897 17.9189L27.885 17.9369C27.7125 18.2024 27.522 18.4964 27.495 18.8324C27.465 19.1954 27.621 19.5239 27.8955 19.8779C28.095 20.1719 28.5075 20.5754 28.926 20.9849L28.965 21.0239C29.403 21.4529 29.8785 21.9179 30.2595 22.3679L30.27 22.3784L30.2805 22.3904C31.4166 23.5237 32.3614 24.8337 33.078 26.2694C33.192 26.6594 33.123 26.8604 33.033 26.9639C32.9295 27.0839 32.697 27.1964 32.256 27.1964H28.833C28.5997 27.2021 28.3689 27.1479 28.1625 27.0389C27.9096 26.8918 27.6801 26.7078 27.4815 26.4929C27.267 26.2784 27.0345 26.0189 26.7495 25.7024L26.529 25.4564H26.5275Z"
+                                            fill="#FFF9F4" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </address>
+                </div>
+                <div class="footer__col">
+                    <ul class="footer__col-list">
+                        <li class="footer__col-item">
+                            <a class="footer__col-link" href="#">Программа обучения</a>
+                        </li>
+                        <li class="footer__col-item">
+                            <a class="footer__col-link" href="#">Галерея</a>
+                        </li>
+                        <li class="footer__col-item">
+                            <a class="footer__col-link" href="#">Отзывы</a>
+                        </li>
+                    </ul>
+                </div>
+                <address class="footer__col">
+                    <ul class="footer__contact-list">
+                        <li class="footer__contact-item">
+                            <img src="imges/icon/ph_clock.svg" alt="#">
+                            ПН-ПТ 10:00-20:00
+                        </li>
+                        <li class="footer__contact-item">
+                            <img src="imges/icon/loca.svg" alt="#">
+                            г. Москва, ул. Землянская, 9Б
+                        </li>
+                    </ul>
+                </address>
+                <div class="footer__col">
+                    <address class="footer__col-tel">
+                        Бесплатная консультация
+                        <a class="footer__col-number" href="tel:+79065505555">+7 (906) 550-55-55</a>
+                    </address>
+                    <div class="footer__col-copy">
+                        <img src="imges/icon/copyright.svg" alt="#">
+                        Все права защищены
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <!-- Модальное окно -->
+    <div class="modal">
+        <div class="modal__window">
+            <!-- само окно по всей высоте и ширине экрана с помощью posicion:fixed со своим background-->
+            <a class="modal__cancel" href="#">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.75" y="0.75" width="22.5" height="22.5" rx="11.25" stroke="#E1D9E1" stroke-width="1.5" />
+                    <path
+                        d="M6.75781 17.2433L12.0008 12.0003L17.2438 17.2433M17.2438 6.75732L11.9998 12.0003L6.75781 6.75732"
+                        stroke="#E1D9E1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+            </a>
+            <img class="modal__img" src="imges/Cake3.png" alt="Три кейка">
+            <h3 class="modal__title">Удиви своих близких вкусными капкейками </h3>
+            <p class="modal__text">Оставь свой e-mail, и мы вышлем рецепт на почту</p>
+            <form class="modal__form">
+                <label class="modal__form-lable field">
+                    <input class="field__input" type="email" placeholder="E-mail">
+                    <span>Введите e-mail</span>
+                </label>
+                
+                <button class="button" type="submit">Получить подарок</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="JS/fslightbox.js"></script>
+    <script src="JS/main.js"></script>
+</body>
+
+</html>
