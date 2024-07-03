@@ -51,7 +51,7 @@
                                 <!-- есть еще элемент между ними и будет появляться за исключением последнего span / если захотят еще добавить дату то точка тоже будет -->
                                 <span>26.06.2023</span>
                             </div>
-                            <h1 class="hero__title">Научись печь торты и десерты с нуля</h1> <!-- Заголовок -->
+                            <h1 class="hero__title title">Научись печь торты и десерты с нуля</h1> <!-- Заголовок -->
                             <p class="hero__text">За 8 практических занятий ты получишь новые возможности для
                                 самореализации и любимое дело</p> <!-- Текст -->
                             <div class="hero__img-conrol hero__img-control--mobile">
@@ -97,18 +97,21 @@
                         </div>
                         <div class="about__body">
                             <div class="about__heading">
-                                <h2 class="about__title">Наша школа —</h2>
+                                <h2 class="title">Наша школа —</h2>
                                 <p class="about__title-text">это уютный дом для начинающих кондитеров</p>
                             </div>
-                            <p class="about__text">С нами ты погрузишься в удивительный мир кондитерского искусства,
+                            <p class="about__text">
+                                С нами ты погрузишься в удивительный мир кондитерского искусства,
                                 получишь новые знания и профессиональные навыки! Обретёшь веру в свои силы, научишься
-                                приготовлению разнообразных современных и классических десертов</p>
-                            <ul class="about__grid">
+                                приготовлению разнообразных современных и классических десертов
+                            </p>
+                        </div>
+                        <ul class="about__grid">
                                 <li class="about__grid-item">
                                     <div class="about__grid-img">
                                         <img src="imges/icon/chef-hat-heart.svg" alt="">
                                     </div>
-                                    <p class="about__grig-text">Живое общение с наставниками и одногруппниками</p>
+                                    <p class="about__grig-text">Живое общение с наставниками и одногруппниками</p>
                                 </li>
                                 <li class="about__grid-item">
                                     <div class="about__grid-img">
@@ -128,13 +131,52 @@
                                     </div>
                                     <p class="about__grig-text">Большие аудитории для обучения</p>
                                 </li>
-                            </ul>
-                        </div>
+                        </ul>
                     </div>
                 </div>
-    </div>
-    </section>
-    </main>
+            </section>
+
+            <!-- ПРОГРАММА -->
+            <section class="main__program program">
+                <div class="container">
+                    <h2 class="program__title title">
+                                Программа обучения
+                    </h2>
+                    <div class="program__top">
+                        <p class="program__text">
+                                Продолжительность курса — 4 недели <br> Программа обучения состоит из 8 модулей <br> На каждое занятие отводится по 6 часов
+                            </p>
+                        <ul class="tab-conrols">
+                            <li class="tab-conrols__item">
+                                <a class="tab-conrols__link tab-conrols__link--active" href="#tab1">
+                                    Неделя 1
+                                </a>
+                            </li>
+                            <li class="tab-conrols__item">
+                                <a class="tab-conrols__link" href="#tab2">
+                                    Неделя 2
+                                </a>
+                            </li>
+                            <li class="tab-conrols__item">
+                                <a class="tab-conrols__link" href="#tab3">
+                                    Неделя 3
+                                </a>
+                            </li>
+                            <li class="tab-conrols__item">
+                                <a class="tab-conrols__link" href="#tab4">
+                                    Неделя 4
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Аккардион c id для связки и блоком чтобы переиспользовать -->
+                    <div class="tab-content" id="tab1">1</div>
+                    <div class="tab-content" id="tab2">2</div>
+                    <div class="tab-content" id="tab3">3</div>
+                    <div class="tab-content" id="tab4">4</div>
+                </div>
+            </section>
+        </main>
 
     <footer class="footer">
         <div class="container"> <!--для flex-->
