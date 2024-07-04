@@ -1,9 +1,11 @@
-(function() {
-    //Бургер функция
+(function () {
+
+    // Бургер
+
     document.addEventListener('click', burgerInit)
 
     function burgerInit(e) {
-        
+
         const burgerIcon = e.target.closest('.burger-icon')
         const burgerNavLink = e.target.closest('.nav__link')
 
@@ -18,25 +20,26 @@
 
     }
 
-    //Модальное окно
-    const modal = document.querySelector('.modal') // Запись переменной
-    const modalButton = document.querySelector('.about__img-button') //Кнопка, при нажатии на которую вызывается модальное окно
+    // Модалка
 
-    modalButton.addEventListener('click', openModal) //Событие клика по кнопке - открытия
-    modal.addEventListener('click', closeModal) //Событие клика - закрытия - на весь элемнт модал
+    const modal = document.querySelector('.modal')
+    const modalButton = document.querySelector('.about__img-button')
+
+    modalButton.addEventListener('click', openModal)
+    modal.addEventListener('click', closeModal)
 
     function openModal(e) {
-        e.preventDefault() // Отмена стандартного поведения
-        document.body.classList.toggle('body--opened-modal') //Навешивание класса и модальное окно появляется
+        e.preventDefault()
+        document.body.classList.toggle('body--opened-modal')
     }
 
-    function closeModal(e) { //делегирование событий
-        e.preventDefault() //Отмена дефолтного поведения
+    function closeModal(e) {
+        e.preventDefault()
 
-        const target = e.target // переменная таргет = сам элемент на которы кликнули внутри модального окна
+        const target = e.target
 
-        if (target.closest('.modal__cancel') || target.classList.contains('modal')) { 
-            document.body.classList.remove('body--opened-modal') //закрытие модального окна
+        if (target.closest('.modal__cancel') || target.classList.contains('modal')) {
+            document.body.classList.remove('body--opened-modal')
         }
 
     }
