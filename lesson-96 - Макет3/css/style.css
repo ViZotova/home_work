@@ -643,15 +643,12 @@
 
 /* =======================PROGRAMS================== */
 
-.program {}
-
 .program__top {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    margin-bottom: 60px;
 }
-
-.program__heading {}
 
 .program__title {
     margin-bottom: 20px;
@@ -663,8 +660,6 @@
     display: flex;
     gap: 26px;
 }
-
-.tab-conrols__item {}
 
 .tab-conrols__link {
     display: block;
@@ -683,7 +678,21 @@
     box-shadow: 0px 4px 20px #cec3b900;
 }
 
-.tab-content {}
+.tab-content {
+    background: #48474717;
+    border-radius: var(--border-radius);
+    height: 400px;
+    font-size: 50px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+
+    display: none;
+}
+
+.tab-content--show {
+    display: flex;
+}
 
 /*====================FOOTER=============================*/
 
