@@ -679,19 +679,176 @@
 }
 
 .tab-content {
-    background: #48474717;
-    border-radius: var(--border-radius);
-    height: 400px;
-    font-size: 50px;
-    display: flex;
-    align-self: center;
-    justify-content: center;
-
     display: none;
 }
 
 .tab-content--show {
+    display: block;
+}
+
+/* -------ACCORDION-------- */
+
+.accordion-list {}
+
+.accordion-list__item {
+    border: 1px solid var(--accent-color);
+    /* 3 */
+    border-radius: var(--border-radius);
+    /* 4 */
+    margin-bottom: 30px;
+    /* 1 */
+}
+
+.accordion-list__item:last-child {
+    margin-bottom: 0px;
+    /* 2 */
+}
+
+.accordion-list__control {
+    padding: 41px 30px;
+    /* 5 / чтобы можно было нажать на всю ссылку, а не только по ис */
     display: flex;
+    /* 9 */
+    justify-content: space-between;
+    /* 10 / заголовок и иконка по сторонам*/
+    align-items: center;
+    /* 11 / выравнивание по сторонам*/
+    width: 100%;
+    /* 6 / растягиваем на всю ширину*/
+    background: transparent;
+    /* 7 / прозрачный фон */
+    /* font-size: inherit; */
+    /* 8 / наследование от родителя */
+    font-family: "Gabriola", serif;
+    /*16*/
+    font-size: 42px;
+    /*17*/
+    line-height: 0.9;
+    /*18/90%*/
+    font-weight: 400;
+    /*19*/
+    color: var(--accent-text);
+    /*20*/
+}
+
+.accordion-list__contril-title {}
+
+.accordion-list__control-icon {
+    /*27*/
+    border: 1.5px solid var(--accent-color);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    /*круг не должен сдвигаться*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.accordion-list__control-icon svg {
+    /*28*/
+    margin-left: 2px;
+}
+
+.accordion-list__control-icon path {
+    /*31*/
+    transition: var(--transition);
+}
+
+.accordion-list__control:hover .accordion-list__control-icon {
+    /*29*/
+    background: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+.accordion-list__control:hover .accordion-list__control-icon path {
+    /*30*/
+    fill: var(--general-bg);
+}
+
+.accordion-list__item--opened:hover .accordion-list__control-icon {
+    /*32*/
+    background: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+.accordion-list__item--opened:hover .accordion-list__control-icon path {
+    /*33*/
+    fill: var(--general-bg);
+}
+
+
+.accordion-list__content {
+    max-height: 0;
+    overflow: hidden;
+}
+
+.accordion-content {
+    padding: 0 30px 30px;
+    /* 12 */
+    display: flex;
+    /* 13 */
+    gap: 80px;
+    /* 14 */
+}
+
+.accordion-content__col:first-child {
+    /*26*/
+    max-width: 507px;
+    width: 100%;
+}
+
+.accordion-content__title {
+    color: #CEAAD0;
+    /*15*/
+    line-height: 1.6;
+    /*21*/
+    text-transform: uppercase;
+    /*22*/
+    margin-bottom: 20px;
+    /*23*/
+}
+
+.accordion-content__list {}
+
+.accordion-content__item {
+    /*25*/
+    display: flex;
+    /*cама*/
+    gap: 8px;
+    /*cама*/
+    margin-bottom: 20px;
+}
+
+.accordion-content__item:last-child {
+    /*25*/
+    margin-bottom: 0px;
+}
+
+.accordion-content__item {
+    /*26*/
+    display: flex;
+    /*cама*/
+    gap: 8px;
+    /*cама*/
+    margin-bottom: 20px;
+}
+
+.accordion-content__icon {
+    /*24*/
+    width: 24px;
+    height: 24px;
+    border: 1px solid #CEAAD0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accordion-content__text {
+    max-width: 274px;
 }
 
 /*====================FOOTER=============================*/
@@ -700,7 +857,7 @@
     background: #AB8261;
     /*общий фон*/
     padding: 60px 0 66px;
-    /*поиенли отсуп с 30 до 60 чтобы все снизить, а логотипу сделать - отступ*/
+    /*поенли отсуп с 30 до 60 чтобы все снизить, а логотипу сделать - отступ*/
     /*общий отступ*/
     color: var(--general-bg);
     /*Цвет для всех общий*/
