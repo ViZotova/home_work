@@ -654,7 +654,9 @@
     margin-bottom: 20px;
 }
 
-.program__text {}
+.program__tab-content {
+    margin-bottom: 40px;
+}
 
 .tab-conrols {
     display: flex;
@@ -687,8 +689,6 @@
 }
 
 /* -------ACCORDION-------- */
-
-.accordion-list {}
 
 .accordion-list__item {
     border: 1px solid var(--accent-color);
@@ -730,8 +730,6 @@
     color: var(--accent-text);
     /*20*/
 }
-
-.accordion-list__contril-title {}
 
 .accordion-list__control-icon {
     /*27*/
@@ -781,8 +779,12 @@
 
 
 .accordion-list__content {
+    /*35*/
     max-height: 0;
+    /*скрытие по умолчанию*/
     overflow: hidden;
+    /*скрытие*/
+    transition: var(--transition);
 }
 
 .accordion-content {
@@ -811,29 +813,15 @@
     /*23*/
 }
 
-.accordion-content__list {}
-
 .accordion-content__item {
     /*25*/
-    display: flex;
-    /*cама*/
-    gap: 8px;
-    /*cама*/
     margin-bottom: 20px;
+    display: flex;
 }
 
 .accordion-content__item:last-child {
     /*25*/
     margin-bottom: 0px;
-}
-
-.accordion-content__item {
-    /*26*/
-    display: flex;
-    /*cама*/
-    gap: 8px;
-    /*cама*/
-    margin-bottom: 20px;
 }
 
 .accordion-content__icon {
@@ -845,11 +833,67 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+    margin-right: 8px;
 }
 
 .accordion-content__text {
     max-width: 274px;
 }
+
+/*====================PRICE=============================*/
+
+.program__botton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.program__action {
+    display: grid;
+    grid-template: repeat(3, auto) / 1.65fr 1fr;
+    gap: 40px;
+    max-width: 501px;
+}
+
+.program__discont {
+    grid-row: 1 / 3;
+    border-radius: var(--border-radius);
+    background: var(--accent-bg);
+    font-size: 20px;
+    padding: 40px;
+}
+
+.program__discont-value {
+    font-family: "Gabriola", serif;
+    font-size: 74px;
+    line-height: 0.82;
+    /*82%*/
+    font-weight: 400;
+    color: var(--accent-color);
+    display: block;
+    margin: 0 0 7px 13%;
+}
+
+.program__discont span {
+    font-size: 16px;
+    margin-left: 35%;
+}
+
+.program__price {}
+
+.program__price-text {
+    line-height: 1.6;
+    text-transform: uppercase;
+    color: #CEAAD0;
+}
+
+.program__price-value {}
+
+.button {}
+
+.program__img {}
 
 /*====================FOOTER=============================*/
 
