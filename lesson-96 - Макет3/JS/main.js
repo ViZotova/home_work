@@ -1,3 +1,33 @@
+// //https://fslightbox.com/javascript Для видео
+// //Бургер-меню - при нажатии на меню идет обработка события клика и показывать действия на клик / через модификатор body--opened-menu
+// //прописываем функцию и сразу вызываем, для менюшки адаптива / анонимная / конкретная область видимости без глобальной / чтобы не было конфликта одинаковых переменных / создаем локальную
+// (function() { 
+
+//    document.addEventListener('click', burgerInit) //делегирование событий / по клику будет воспроизводится функция
+//     function burgerInit(e) {
+
+//         const burgerIcon = e.target.closest('.burger-icon') // проверяет есть ли у элемента родитель с классом '' и если есть то функция возвращает родителя
+//         const burgerNavLink = e.target.closest('.nav__link') //элементы меню / возвращает родителя и если сам элемент nav__link
+
+//         // console.log(document.documentElement.clientWidth) Узнать размер ширины экрана клиенты
+
+
+//         if (!burgerIcon && !burgerNavLink) return //если нет БургерАйкон или БургернавЛинк / return - прекращаю выполнение
+
+//         if(document.documentElement.clientWidth > 900) return // есши ширина больше 900 то условия прерываются, если меньше то условия ниже срабатывают
+
+//         if (!document.body.classList.contains('body--opened-menu')) { //проверка
+//             document.body.classList.add('body--opened-menu')//добавляем еще класс если у body еще нет класса
+//             } else { //иначе его удаляем
+//             document.body.classList.remove('body--opened-menu')
+//         }
+
+//     }
+
+// })()
+
+
+
 (function() {
     //Бургер функция
     document.addEventListener('click', burgerInit)
@@ -69,8 +99,39 @@
         //актуальность
         tabControl.classList.add('tab-conrols__link--active')
         tabContent.classList.add('tab-content--show')//навесить show на кнопку которую нажали / href
-
     }
     
+  // Аккордеон
 
-}) ()
+    const accordionLists = document.querySelectorAll('.accordion-list');
+
+    accordionLists.forEach(el => {
+
+        el.addEventListener('click', (e) => {
+
+            const accordionList = e.currentTarget
+            const accordionOpenedItem = accordionList.querySelector('.accordion-list__item--opened')
+            const accordionOpenedContent = accordionList.querySelector('.accordion-list__item--opened .accordion-list__content')
+
+            const accordionControl = e.target.closest('.accordion-list__control');
+            if (!accordionControl) return
+            const accordionItem = accordionControl.parentElement;
+            const accordionContent = accordionControl.nextElementSibling;
+
+            if (accordionOpenedItem && accordionItem != accordionOpenedItem) {
+                accordionOpenedItem.classList.remove('accordion-list__item--opened');
+                accordionOpenedContent.style.maxHeight = null;
+            }
+            accordionItem.classList.toggle('accordion-list__item--opened');
+
+            if (accordionItem.classList.contains('accordion-list__item--opened')) {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+            } else {
+                accordionContent.style.maxHeight = null;
+            }
+
+        })
+
+    })
+
+})()
