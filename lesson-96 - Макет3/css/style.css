@@ -852,7 +852,7 @@
 
 .program__action {
     display: grid;
-    grid-template: repeat(3, auto) / 1.65fr 1fr;
+    grid-template: repeat(3, auto) / 1.65fr 1.2fr;
     gap: 40px;
     max-width: 501px;
 }
@@ -874,6 +874,26 @@
     color: var(--accent-color);
     display: block;
     margin: 0 0 7px 13%;
+    /* --Анимация-- */
+    animation: discont-grow 1s linear infinite alternate;
+    transform-origin: 0 0;
+    /*Анимация в левый нижний угол*/
+}
+
+/* --Анимация-- */
+@keyframes discont-grow {
+    0% {
+        /* font-size: 74px;  */
+        transform: scale(1);
+        color: var(--accent-color);
+    }
+
+    100% {
+        /* font-size: 82.222px; / увеличивает весь экран*/
+        transform: translateX(4%) scale(.8);
+
+        color: #FF9138;
+    }
 }
 
 .program__discont span {
@@ -887,13 +907,29 @@
     line-height: 1.6;
     text-transform: uppercase;
     color: #CEAAD0;
+    margin-bottom: 5px;
 }
 
-.program__price-value {}
+.program__price-value {
+    font-family: "Gabriola", serif;
+    font-size: 32px;
+    line-height: 0.9;
+    font-weight: 400;
+}
 
-.button {}
+.program__price-value--big {
+    font-size: 50px;
+    color: var(--accent-text);
+}
 
-.program__img {}
+.program__button {
+    grid-column: 1 / -1;
+}
+
+.program__img img {
+    width: 100%;
+    /*при уменьшении экрана изображение тоже уменьшается*/
+}
 
 /*====================FOOTER=============================*/
 
