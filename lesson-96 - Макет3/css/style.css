@@ -645,9 +645,10 @@
 
 .program__top {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: 60px;
+    gap: 30px 15px;
 }
 
 .program__title {
@@ -669,6 +670,8 @@
     padding: 14px 30px;
     box-shadow: 0px 4px 20px #cec3b94d;
     transition: var(--transition);
+    white-space: nowrap;
+    /*без переноса текста*/
 }
 
 .tab-conrols__link:hover {
@@ -711,7 +714,7 @@
     /* 9 */
     justify-content: space-between;
     /* 10 / заголовок и иконка по сторонам*/
-    align-items: center;
+    /* align-items: center; */
     /* 11 / выравнивание по сторонам*/
     width: 100%;
     /* 6 / растягиваем на всю ширину*/
@@ -729,6 +732,13 @@
     /*19*/
     color: var(--accent-text);
     /*20*/
+    gap: 15px;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.accordion-list__item--opened .accordion-list__control {
+    padding-bottom: 20px;
 }
 
 .accordion-list__control-icon {
@@ -855,6 +865,8 @@
     grid-template: repeat(3, auto) / 1.65fr 1.2fr;
     gap: 40px;
     max-width: 501px;
+    flex-shrink: 0;
+    width: 100%;
 }
 
 .program__discont {
@@ -900,8 +912,6 @@
     font-size: 16px;
     margin-left: 35%;
 }
-
-.program__price {}
 
 .program__price-text {
     line-height: 1.6;
@@ -1109,6 +1119,17 @@
         grid-column: 1 / -1;
         text-align: center;
     }
+
+    /* ===Program=== */
+
+    .program__top {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tab-conrols {
+        flex-wrap: wrap;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -1127,6 +1148,16 @@
     .about__grid {
         grid-column: 1 / -1;
         /*растягивание элементов на всю ширину - на 2 колонки*/
+    }
+
+    /* ==Program== */
+    .accordion-list__control {
+        font-size: 35px;
+        padding: 25px 30px;
+    }
+
+    .accordion-content {
+        padding: 0 30px 40px;
     }
 }
 
@@ -1213,6 +1244,16 @@
         margin-bottom: 10px;
         /*отсутпы*/
     }
+
+    /* ====Program==== */
+    .program__action {
+        max-width: none;
+        grid-template: repeat(3, auto) / minmax(287px, 1fr) 1fr;
+    }
+
+    .program__img {
+        display: none;
+    }
 }
 
 @media (max-width: 800px) {
@@ -1260,6 +1301,28 @@
         grid-template: none;
         /*Убираем колонки*/
     }
+
+    /* ==Program=== */
+    .tab-conrols {
+        gap: 10px;
+    }
+
+    .tab-conrols__link {
+        padding: 6px 20px;
+    }
+
+    .accordion-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .accordion-content__col:first-child {
+        max-width: none;
+    }
+
+    .accordion-content__text {
+        max-width: none;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1301,6 +1364,50 @@
         padding: 10px 15px;
         /*Уменьшаем отступы*/
     }
+
+    /* ==Program== */
+
+    .main__program {
+        padding: 0 0 80px;
+    }
+
+    .program__title {
+        text-align: center;
+    }
+
+    .program__top {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .tab-conrols {
+        justify-content: center;
+    }
+
+    .accordion-list__control {
+        padding: 17px 30px;
+        font-size: 28px;
+    }
+
+    .accordion-list__control-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .accordion-list__control-icon svg {
+        width: 10px;
+    }
+
+    .program__discont {
+        grid-row: auto;
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    .program__action {
+        grid-template: repeat(3, auto) / auto auto;
+        gap: 15px;
+    }
 }
 
 @media (max-width: 450px) {
@@ -1318,4 +1425,31 @@
     .modal__title {
         font-size: 35px;
     }
+
+    /* ===Program== */
+    .accordion-list__control {
+        padding: 17px 30px;
+        font-size: 28px;
+    }
+
+    .accordion-list__control {
+        padding: 17px 15px;
+    }
+
+    .accordion-content {
+        padding: 0 15px 30px;
+    }
+
+    .accordion-content__item {
+        margin-bottom: 10px;
+    }
+
+    .program__action {
+        grid-template: none;
+    }
+
+    .program__price {
+        text-align: center;
+    }
+
 }
