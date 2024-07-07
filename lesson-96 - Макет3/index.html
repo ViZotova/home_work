@@ -6,8 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wake & Bake</title>
-    <link href="css/fonts.css" rel="stylesheet">
-    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/swiper-bundle.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 
@@ -172,7 +171,7 @@
                     <div class="program__tab-content tab-content tab-content--show" id="tab1">
                         <!--обязательно активный модификатор-->
                         <ul class="accordion-list">
-                            <li class="accordion-list__item> <!---1 вкладка-->
+                            <li class="accordion-list__item"> <!---1 вкладка-->
                                 <button class="accordion-list__control" type="button">
                                     <h3 class="accordion-list__contril-title">Начало кондитерского пути и создание
                                         первого торта</h3> <!--Название кнопки-->
@@ -667,7 +666,7 @@
                             </div>
                             <div class="program__price">
                                 <div class="program__price-text">
-                                    Стоимость курса со скидкой
+                                    Стоимость курса без скидки
                                 </div>
                                 <div class="program__price-value">
                                     32 000 руб.
@@ -675,7 +674,7 @@
                             </div>
                             <div class="program__price">
                                 <div class="program__price-text">
-                                    Стоимость курса без скидки
+                                    Стоимость курса со скидкой
                                 </div>
                                 <div class="program__price-value program__price-value--big">
                                     22 400 руб.
@@ -688,6 +687,81 @@
                         <div class="program__img">
                             <img src="imges/Cake 1.png" alt="">
                         </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ГАЛЛЕРЕЯ -->
+            <section class="main__gallery gallery">
+                <div class="container">
+                    <div class="gallery__inner">
+                        <div class="gallory__img">
+                            <img src="imges/Cake2.png" alt="">
+                        </div>
+                        <div class="gallery__content">
+                            <div class="gallery__info">
+                                <h2 class="gallery__title title">
+                                    Фотогалерея
+                                </h2>
+                                <p class="gallery__text">
+                                    Для комфортного обучения сделаны просторные аудитории, где предоставляется всё необходимое оборудование. Здесь наши ученики создают кулинарные шедевры под присмотром опытных наставников
+                                </p>
+                            </div>
+                            <div class="gallery__nav">
+                                <button class="gallery__prev" type="button">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.22442 1.02438L2.24842 7.00038L8.22442 12.9764L7.21642 13.9844L0.232422 7.00038L7.21642 0.0163742L8.22442 1.02438Z" fill="#E1D9E1"/>
+<path d="M1.24023 7.71973L1.24023 6.27973L13.4802 6.27973L13.4802 7.71973L1.24023 7.71973Z" fill="#E1D9E1"/>
+</svg>
+                                </button>
+                                <div class="gallery__pagination"></div> 
+                                <button class="gallery__next" type="button">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.77607 12.9756L11.7521 6.99962L5.77607 1.02363L6.78407 0.0156247L13.7681 6.99962L6.78407 13.9836L5.77607 12.9756Z" fill="#FFA55C"/>
+<path d="M12.7598 6.28027L12.7598 7.72027L0.519766 7.72027L0.519766 6.28027L12.7598 6.28027Z" fill="#FFA55C"/>
+</svg>
+                                </button>
+                            </div>
+                            
+                        </div>
+                    </div>
+<!-- Слайдер -->
+                    <div class="gallery__slider swiper">
+<!-- Additional required wrapper -->
+                        <div class="gallery__wrapper swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="gallery__slide swiper-slide">
+                                <img src="imges/gallery/Rectangle 1.jpg" alt="Девушка с тортом">
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <img src="imges/gallery/Rectangle 2.jpg" alt="Девушка с тортом">
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <img src="imges/gallery/Rectangle 3.jpg" alt="Девушка с тортом">
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <img src="imges/gallery/Rectangle 4.jpg" alt="Девушка с тортом">
+                            </div>
+
+                            <div class="gallery__slide swiper-slide">
+                                <img src="imges/gallery/Rectangle 1.jpg" alt="Девушка с тортом">
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <img src="imges/gallery/Rectangle 1.jpg" alt="Девушка с тортом">
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <img src="imges/gallery/Rectangle 1.jpg" alt="Девушка с тортом">
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <img src="imges/gallery/Rectangle 1.jpg" alt="Девушка с тортом">
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <img src="imges/gallery/Rectangle 1.jpg" alt="Девушка с тортом">
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <img src="imges/gallery/Rectangle 1.jpg" alt="Девушка с тортом">
+                            </div>
+
+
                     </div>
                 </div>
             </section>
@@ -811,6 +885,7 @@
     </div>
 
     <script src="JS/fslightbox.js"></script>
+    <script src="JS/swiper-bundle.min.js"></script>
     <script src="JS/main.js"></script>
 </body>
 
