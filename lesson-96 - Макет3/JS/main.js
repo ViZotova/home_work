@@ -1,33 +1,3 @@
-// //https://fslightbox.com/javascript Для видео
-// //Бургер-меню - при нажатии на меню идет обработка события клика и показывать действия на клик / через модификатор body--opened-menu
-// //прописываем функцию и сразу вызываем, для менюшки адаптива / анонимная / конкретная область видимости без глобальной / чтобы не было конфликта одинаковых переменных / создаем локальную
-// (function() { 
-
-//    document.addEventListener('click', burgerInit) //делегирование событий / по клику будет воспроизводится функция
-//     function burgerInit(e) {
-
-//         const burgerIcon = e.target.closest('.burger-icon') // проверяет есть ли у элемента родитель с классом '' и если есть то функция возвращает родителя
-//         const burgerNavLink = e.target.closest('.nav__link') //элементы меню / возвращает родителя и если сам элемент nav__link
-
-//         // console.log(document.documentElement.clientWidth) Узнать размер ширины экрана клиенты
-
-
-//         if (!burgerIcon && !burgerNavLink) return //если нет БургерАйкон или БургернавЛинк / return - прекращаю выполнение
-
-//         if(document.documentElement.clientWidth > 900) return // есши ширина больше 900 то условия прерываются, если меньше то условия ниже срабатывают
-
-//         if (!document.body.classList.contains('body--opened-menu')) { //проверка
-//             document.body.classList.add('body--opened-menu')//добавляем еще класс если у body еще нет класса
-//             } else { //иначе его удаляем
-//             document.body.classList.remove('body--opened-menu')
-//         }
-
-//     }
-
-// })()
-
-
-
 (function() {
     //Бургер функция
     document.addEventListener('click', burgerInit)
@@ -103,35 +73,53 @@
     
   // Аккордеон
 
-    const accordionLists = document.querySelectorAll('.accordion-list');
+    const accordionLists = document.querySelectorAll('.accordion-list'); //переменная - все акк листы
 
-    accordionLists.forEach(el => {
+    accordionLists.forEach(el => { //по всем листам пройтись
 
-        el.addEventListener('click', (e) => {
-
+        el.addEventListener('click', (e) => { //каждому клик
+//делегирование событий
             const accordionList = e.currentTarget
             const accordionOpenedItem = accordionList.querySelector('.accordion-list__item--opened')
             const accordionOpenedContent = accordionList.querySelector('.accordion-list__item--opened .accordion-list__content')
 
-            const accordionControl = e.target.closest('.accordion-list__control');
-            if (!accordionControl) return
+            const accordionControl = e.target.closest('.accordion-list__control'); //куда кликаем
+            if (!accordionControl) return //код продолжаем
             const accordionItem = accordionControl.parentElement;
-            const accordionContent = accordionControl.nextElementSibling;
+            const accordionContent = accordionControl.nextElementSibling; //след элемент после контрола / после кнопки идет контент
 
-            if (accordionOpenedItem && accordionItem != accordionOpenedItem) {
+            if (accordionOpenedItem && accordionItem != accordionOpenedItem) { //в момент клика другие вкладки закрываются
                 accordionOpenedItem.classList.remove('accordion-list__item--opened');
                 accordionOpenedContent.style.maxHeight = null;
             }
-            accordionItem.classList.toggle('accordion-list__item--opened');
+            accordionItem.classList.toggle('accordion-list__item--opened'); //включается css
 
-            if (accordionItem.classList.contains('accordion-list__item--opened')) {
-                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+            if (accordionItem.classList.contains('accordion-list__item--opened')) { //проверка
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px'; //стиль для контента и его высота увеличивается если он открыт 
             } else {
-                accordionContent.style.maxHeight = null;
+                accordionContent.style.maxHeight = null; //иначе если класса нет, то мы обнуляем
             }
 
         })
 
     })
+
+    //Cлайдер / https://swiperjs.com
+
+    const swiper = new Swiper('.gallery__slider', {
+        spaceBetween: 32,
+        slidesPerView: 4,
+
+    pagination: {
+    el: '.gallery__pagination',
+    type: 'fraction',
+    },
+
+    navigation: {
+    nextEl: '.gallery__next',
+    prevEl: '.gallery__prev',
+},
+
+});
 
 })()
