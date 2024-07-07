@@ -1,0 +1,366 @@
+/* ====================MEDIA/AДАПТИВ=====до 320========= */
+
+@media (max-width: 1200px) {
+
+    /* ===HEADER== */
+    .hero__img {
+        margin: 0;
+        /*Отмена отступа*/
+        max-width: 377px;
+        /*Максимальная ширина изображения*/
+    }
+
+    /*Воспроизведение ниже изображения*/
+    .hero__img-conrol {
+        position: static;
+        /*перенос вниз*/
+        max-width: nine;
+        /*убираем максимальную ширину*/
+        margin-top: 30px;
+        /*отсуп от изображения к кнопке*/
+    }
+
+    /* ==FOOTER== */
+    .footer__inner {
+        justify-content: space-between;
+        grid-template: repeat(2, auto) / repeat(3, auto);
+    }
+
+    .footer__col:last-child {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    /* ===Program=== */
+
+    .program__top {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tab-conrols {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 1100px) {
+
+    /* ====ABOUT==== */
+    .about__body {
+        align-self: center;
+        /*текст по среди изображения*/
+    }
+
+    .about__img {
+        grid-row: auto;
+        /*Убираем растягивание изображения*/
+    }
+
+    .about__grid {
+        grid-column: 1 / -1;
+        /*растягивание элементов на всю ширину - на 2 колонки*/
+    }
+
+    /* ==Program== */
+    .accordion-list__control {
+        font-size: 35px;
+        padding: 25px 30px;
+    }
+
+    .accordion-content {
+        padding: 0 30px 40px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    /* ===HEADER==== */
+    /* Бургер меню - 3 полоски при нажатии - выпадает навигация Добавить после навигации в html чтобы было справа */
+    .nav {
+        /*Скрываем навигацию*/
+        position: fixed;
+        background: var(--general-bg);
+        inset: 0;
+        /*чтобы растяжение было по всему экрану*/
+        z-index: 10;
+        /*Виден только список*/
+        padding: 26vh 15px 30px;
+        /*отступы для менюшки*/
+        font-size: 30px;
+        /*Шрифт для всего блока*/
+
+        /*Скрытие меню, а откроются в модификаторе*/
+        transform: translateY(-50%);
+        /*сделать отсуп для появления меню сверху*/
+        opacity: 0;
+        /*чтобы появлялось в момент нажатия*/
+        visibility: hidden;
+        /*чтобы полностью скрыть из инструмента разработчика/ чтобы nav пропал при наведении в инструменте разработчика/ используется часто с opacity*/
+        transition: var(--transition);
+    }
+
+    .nav__link {
+        text-align: center;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        /*В столбик*/
+        align-items: center;
+        /*По центру*/
+    }
+
+    .body--opened-menu .nav {
+        /*когда нажимаем на иконку бургера у body будет появляться модификатор*/
+        transform: translateY(0%);
+        /*сделать отсуп для появления меню сверху*/
+        opacity: 1;
+        /*чтобы появлялось в момент нажатия*/
+        visibility: visible;
+        /*чтобы полностью скрыть из инструмента разработчика/ чтобы nav пропал при наведении в инструменте разработчика/ используется часто с opacity*/
+    }
+
+    .burger-icon {
+        display: flex;
+        /*чтобы полоска была посредине*/
+    }
+
+    /* ====FOOTER=== */
+
+    .footer__inner {
+        justify-content: center;
+        /*по центру*/
+        grid-template: none;
+        text-align: center;
+        /*по центру*/
+        gap: 0;
+        /*отмена всех отступов для индивидуальных отсутпов*/
+    }
+
+    .footer__col:first-child {
+        /*выравнивание по центру*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+        /*отступ*/
+    }
+
+    .footer__col:nth-child(2) {
+        margin-bottom: 40px;
+        /*отступы*/
+    }
+
+    .footer__col:nth-child(3) {
+        margin-bottom: 10px;
+        /*отсутпы*/
+    }
+
+    /* ====Program==== */
+    .program__action {
+        max-width: none;
+        grid-template: repeat(3, auto) / minmax(287px, 1fr) 1fr;
+    }
+
+    .program__img {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+
+    /*Исключить изображение и видео из мобильной версии / При этом добавить просмотр видео после текста в html*/
+    .hero__img {
+        display: none;
+    }
+
+    .hero__img-control--mobile {
+        display: flex;
+        margin: 0 0 30px;
+        /*Появится кнопка воспроизведения*/
+    }
+
+    .hero__content {
+        display: flex;
+        flex-direction: column;
+        /*Элементы выстраиваются сверху вниз*/
+        align-items: center;
+        text-align: center;
+        max-width: none;
+        width: 100%;
+        /*Иначе растягивается по тексту заголовка*/
+    }
+
+    /* =====ABOUT======= */
+    .about__inner {
+        grid-template: none;
+        /*Чтобы было в столбик*/
+    }
+
+    .about__img {
+        max-width: 500px;
+        /*Уменьшить изображение*/
+        justify-self: center;
+        /*Разместить изображение по центру*/
+    }
+
+    .about__body {
+        text-align: center;
+    }
+
+    .about__grid {
+        grid-template: none;
+        /*Убираем колонки*/
+    }
+
+    /* ==Program=== */
+    .tab-conrols {
+        gap: 10px;
+    }
+
+    .tab-conrols__link {
+        padding: 6px 20px;
+    }
+
+    .accordion-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .accordion-content__col:first-child {
+        max-width: none;
+    }
+
+    .accordion-content__text {
+        max-width: none;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .main__about {
+        padding: 60px 0 80px;
+    }
+
+    /* ================== */
+
+    .header__hero {
+        padding-bottom: 80px;
+    }
+
+    .title {
+        font-size: 12vw;
+    }
+
+    /* ========ABOUT====== */
+    .title {
+        font-size: 12vw;
+    }
+
+    .about__img-control {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        max-width: none;
+        padding: 10px 15px;
+    }
+
+    .about__grid {
+        gap: 15px;
+        /*Отступы между элементами меньше*/
+    }
+
+    .about__grid-item {
+        padding: 10px 15px;
+        /*Уменьшаем отступы*/
+    }
+
+    /* ==Program== */
+
+    .main__program {
+        padding: 0 0 80px;
+    }
+
+    .program__title {
+        text-align: center;
+    }
+
+    .program__top {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .tab-conrols {
+        justify-content: center;
+    }
+
+    .accordion-list__control {
+        padding: 17px 30px;
+        font-size: 28px;
+    }
+
+    .accordion-list__control-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .accordion-list__control-icon svg {
+        width: 10px;
+    }
+
+    .program__discont {
+        grid-row: auto;
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    .program__action {
+        grid-template: repeat(3, auto) / auto auto;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    /* =======MODAL======= */
+    .modal__window {
+        padding: 0 15px 45px;
+    }
+
+    .modal__img {
+        width: 50%;
+        margin-top: -45px;
+    }
+
+    .modal__title {
+        font-size: 35px;
+    }
+
+    /* ===Program== */
+    .accordion-list__control {
+        padding: 17px 30px;
+        font-size: 28px;
+    }
+
+    .accordion-list__control {
+        padding: 17px 15px;
+    }
+
+    .accordion-content {
+        padding: 0 15px 30px;
+    }
+
+    .accordion-content__item {
+        margin-bottom: 10px;
+    }
+
+    .program__action {
+        grid-template: none;
+    }
+
+    .program__price {
+        text-align: center;
+    }
+
+}

@@ -1,0 +1,505 @@
+/*Подключение стилей*/
+@import "fonts.css";
+@import "reset.css";
+@import "global.css";
+@import "header.css";
+@import "footer.css";
+@import "media.css";
+
+
+/* ========================ABOUT====================== */
+
+
+.about__inner {
+    display: grid;
+    /*чтобы 2 элемента были равны*/
+    grid-template-columns: 1fr 1.05fr;
+    /*2 колонки*/
+    grid-template-rows: repeat(2, auto);
+    /*2 строки*/
+    gap: 40px 53px;
+    /*отступы между строками и колонками*/
+}
+
+.about__img {
+    border-radius: var(--border-radius);
+    /*без overflow скругления быть не может*/
+    overflow: hidden;
+    position: relative;
+    /*для contrlol*/
+    grid-row: 1 / -1;
+    /*растянуть изображение*/
+}
+
+.about__img>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0% 50%;
+    /*чтобы при адаптиве была середина изображения*/
+}
+
+.about__img-control {
+    position: absolute;
+    bottom: 4.7%;
+    /*25px*/
+    left: 5%;
+    /*30px*/
+    display: flex;
+    /*иконка относительно текста*/
+    align-items: center;
+    gap: 10px;
+    /*отступ друг от друга*/
+    max-width: 299px;
+    /*ширина всей кнопки*/
+    text-align: left;
+    background: #957b97e6;
+    /*фон для кнопки подарка*/
+    border-radius: var(--border-radius);
+    padding: 15px 20px;
+    color: var(--general-bg);
+}
+
+.about__img-button {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background: var(--general-bg);
+    box-shadow: 0 4px 20px rgba(184, 148, 126, .3);
+    position: relative;
+}
+
+.about__img-button::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    border: 1px solid #CEAAD0;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.about__img-button:hover::before {
+    opacity: 1;
+}
+
+.about__heading {
+    margin-bottom: 30px;
+}
+
+.about__grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.about__grid-item {
+    background: var(--accent-bg);
+    border-radius: var(--border-radius);
+    padding: 29px 24px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.about__grid-img {
+    border: 1px solid var(--general-text);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    /*чтобы элемент не уменьшался*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =======================PROGRAMS================== */
+
+.program__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    gap: 30px 15px;
+}
+
+.program__title {
+    margin-bottom: 20px;
+}
+
+.program__tab-content {
+    margin-bottom: 40px;
+}
+
+.tab-conrols {
+    display: flex;
+    gap: 26px;
+}
+
+.tab-conrols__link {
+    display: block;
+    border-radius: 100px;
+    padding: 14px 30px;
+    box-shadow: 0px 4px 20px #cec3b94d;
+    transition: var(--transition);
+    white-space: nowrap;
+    /*без переноса текста*/
+}
+
+.tab-conrols__link:hover {
+    background: var(--accent-bg);
+}
+
+.tab-conrols__link--active {
+    background: var(--accent-bg);
+    box-shadow: 0px 4px 20px #cec3b900;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content--show {
+    display: block;
+}
+
+/* -------ACCORDION-------- */
+
+.accordion-list__item {
+    border: 1px solid var(--accent-color);
+    /* 3 */
+    border-radius: var(--border-radius);
+    /* 4 */
+    margin-bottom: 30px;
+    /* 1 */
+}
+
+.accordion-list__item:last-child {
+    margin-bottom: 0px;
+    /* 2 */
+}
+
+.accordion-list__control {
+    padding: 41px 30px;
+    /* 5 / чтобы можно было нажать на всю ссылку, а не только по ис */
+    display: flex;
+    /* 9 */
+    justify-content: space-between;
+    /* 10 / заголовок и иконка по сторонам*/
+    /* align-items: center; */
+    /* 11 / выравнивание по сторонам*/
+    width: 100%;
+    /* 6 / растягиваем на всю ширину*/
+    background: transparent;
+    /* 7 / прозрачный фон */
+    /* font-size: inherit; */
+    /* 8 / наследование от родителя */
+    font-family: "Gabriola", serif;
+    /*16*/
+    font-size: 42px;
+    /*17*/
+    line-height: 0.9;
+    /*18/90%*/
+    font-weight: 400;
+    /*19*/
+    color: var(--accent-text);
+    /*20*/
+    gap: 15px;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.accordion-list__item--opened .accordion-list__control {
+    padding-bottom: 20px;
+}
+
+.accordion-list__control-icon {
+    /*27*/
+    border: 1.5px solid var(--accent-color);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    /*круг не должен сдвигаться*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.accordion-list__control-icon svg {
+    /*28*/
+    margin-left: 2px;
+}
+
+.accordion-list__control-icon path {
+    /*31*/
+    transition: var(--transition);
+}
+
+.accordion-list__control:hover .accordion-list__control-icon {
+    /*29*/
+    background: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+.accordion-list__control:hover .accordion-list__control-icon path {
+    /*30*/
+    fill: var(--general-bg);
+}
+
+.accordion-list__item--opened:hover .accordion-list__control-icon {
+    /*32*/
+    background: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+.accordion-list__item--opened:hover .accordion-list__control-icon path {
+    /*33*/
+    fill: var(--general-bg);
+}
+
+
+.accordion-list__content {
+    /*35*/
+    max-height: 0;
+    /*скрытие по умолчанию*/
+    overflow: hidden;
+    /*скрытие*/
+    transition: var(--transition);
+}
+
+.accordion-content {
+    padding: 0 30px 30px;
+    /* 12 */
+    display: flex;
+    /* 13 */
+    gap: 80px;
+    /* 14 */
+}
+
+.accordion-content__col:first-child {
+    /*26*/
+    max-width: 507px;
+    width: 100%;
+}
+
+.accordion-content__title {
+    color: #CEAAD0;
+    /*15*/
+    line-height: 1.6;
+    /*21*/
+    text-transform: uppercase;
+    /*22*/
+    margin-bottom: 20px;
+    /*23*/
+}
+
+.accordion-content__item {
+    /*25*/
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.accordion-content__item:last-child {
+    /*25*/
+    margin-bottom: 0px;
+}
+
+.accordion-content__icon {
+    /*24*/
+    width: 24px;
+    height: 24px;
+    border: 1px solid #CEAAD0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 8px;
+}
+
+.accordion-content__text {
+    max-width: 274px;
+}
+
+/*====================PRICE=============================*/
+
+.program__botton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.program__action {
+    display: grid;
+    grid-template: repeat(3, auto) / 1.65fr 1.2fr;
+    gap: 40px;
+    max-width: 501px;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.program__discont {
+    grid-row: 1 / 3;
+    border-radius: var(--border-radius);
+    background: var(--accent-bg);
+    font-size: 20px;
+    padding: 40px;
+}
+
+.program__discont-value {
+    font-family: "Gabriola", serif;
+    font-size: 74px;
+    line-height: 0.82;
+    /*82%*/
+    font-weight: 400;
+    color: var(--accent-color);
+    display: block;
+    margin: 0 0 7px 13%;
+    /* --Анимация-- */
+    animation: discont-grow 1s linear infinite alternate;
+    transform-origin: 0 0;
+    /*Анимация в левый нижний угол*/
+}
+
+/* --Анимация-- */
+@keyframes discont-grow {
+    0% {
+        /* font-size: 74px;  */
+        transform: scale(1);
+        color: var(--accent-color);
+    }
+
+    100% {
+        /* font-size: 82.222px; / увеличивает весь экран*/
+        transform: translateX(4%) scale(.8);
+
+        color: #FF9138;
+    }
+}
+
+.program__discont span {
+    font-size: 16px;
+    margin-left: 35%;
+}
+
+.program__price-text {
+    line-height: 1.6;
+    text-transform: uppercase;
+    color: #CEAAD0;
+    margin-bottom: 5px;
+}
+
+.program__price-value {
+    font-family: "Gabriola", serif;
+    font-size: 32px;
+    line-height: 0.9;
+    font-weight: 400;
+}
+
+.program__price-value--big {
+    font-size: 50px;
+    color: var(--accent-text);
+}
+
+.program__button {
+    grid-column: 1 / -1;
+}
+
+.program__img img {
+    width: 100%;
+    /*при уменьшении экрана изображение тоже уменьшается*/
+}
+
+/* ==================GALLERY================== */
+
+.gallery__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+.gallory__img {
+    justify-self: center;
+}
+
+.gallory__img img {
+    max-width: 100%;
+}
+
+.gallery__content {
+    display: flex;
+    align-items: end;
+    gap: 15px;
+    justify-content: space-between;
+
+}
+
+.gallery__info {
+    max-width: 380px;
+}
+
+.gallery__title {
+    margin-bottom: 10px;
+}
+
+.gallery__nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-family: "Gabriola", serif;
+    font-size: 42px;
+    line-height: 0.9;
+    font-weight: 400;
+}
+
+.gallery__prev,
+.gallery__next {
+    background: transparent;
+    cursor: pointer;
+    border: 1.5px solid var(--accent-color);
+    border-radius: 50%;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.gallery__prev path,
+.gallery__next path {
+    transition: var();
+}
+
+.gallery__prev:hover,
+.gallery__next:hover {
+    background: var(--accent-color);
+}
+
+.gallery__prev:hover path,
+.gallery__next:hover path {
+    fill: var(--general-bg);
+}
+
+.gallery__pagination {
+    display: flex;
+}
+
+.gallery__slide {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.gallery__slide img {
+    width: 100%;
+}
