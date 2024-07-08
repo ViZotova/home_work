@@ -1,0 +1,220 @@
+/* ==========ОБЩИЕ СТИЛИ======= */
+
+:root {
+    --general-text: #312C27;
+    --accent-text: #1F1711;
+    --general-bg: #FFF9F4;
+    --accent-bg: #FFE0CB;
+    --accent-color: #FFA55C;
+    --transition: all .4s;
+    --border-radius: 20px;
+}
+
+.body {
+    font-family: "Montserrat", "Arial", sans-serif;
+    line-height: 1.5;
+    color: var(--general-text);
+    background: var(--general-bg);
+}
+
+.body--opened-menu {
+    overflow: hidden;
+    /* Управление скролл */
+}
+
+.body--opened-modal {
+    overflow: hidden;
+}
+
+.wrapper {
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.main__about {
+    padding: 140px 0;
+}
+
+.main__program {
+    padding-bottom: 145px;
+}
+
+.main__gallery,
+.main__testimonials {
+    padding-bottom: 140px;
+}
+
+.container {
+    max-width: 1310px;
+    margin: 0 auto;
+    padding: 0 15px;
+    height: 100%;
+}
+
+.title {
+    font-family: "Gabriola", serif;
+    font-size: 74px;
+    line-height: 0.82;
+    /*82%*/
+    font-weight: 400;
+    color: var(--accent-text);
+}
+
+.button {
+    /* Text */
+    font-weight: 500;
+    line-height: 1.6;
+    /* 160% */
+    font-size: 16px;
+    /* на всякий случай добавить тк кнопка */
+    color: var(--general-text);
+    /* Кнопка */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--accent-color);
+    padding: 3px 15px;
+    /* чтобы текст не прилип к кнопке 3tb 15lr */
+    border-radius: 100px;
+    /* при адаптиве не съехало */
+    transition: var(--transition);
+    width: 100%;
+    height: 62px;
+}
+
+.button:hover {
+    background: #FF9138;
+}
+
+/* ========================MODAL================================== */
+
+.modal {
+    position: fixed;
+    /*на весь экран*/
+    inset: 0;
+    /*Растянуть по всему экрану*/
+    background: #00000080;
+    /*цвет фона*/
+    z-index: 10;
+    /*чтобы перебить экран и никакие элементы не были кликабельны*/
+    display: flex;
+    align-items: center;
+    /*размещение по центу*/
+    justify-content: center;
+    /*размещение по центру*/
+    padding: 15px;
+
+    /*скрыть модалку*/
+    opacity: 0;
+    visibility: hidden;
+    transition: all .6s;
+}
+
+/*Включить модалку*/
+.body--opened-modal .modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal__window {
+    background: var(--general-bg);
+    /*фон*/
+    border-radius: var(--border-radius);
+    padding: 0 60px 60px;
+    position: relative;
+    max-width: 428px;
+}
+
+.modal__cancel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.modal__cancel path {
+    transition: var(--transition);
+}
+
+.modal__cancel:hover path,
+.modal__cancel:hover rect {
+    stroke: #AC907A;
+}
+
+.modal__img {
+    margin: -65px 0 15px 13px;
+    min-width: 100%;
+}
+
+.modal__title {
+    margin-bottom: 10px;
+    font-family: "Gabriola", serif;
+    font-size: 42px;
+    line-height: .9;
+    /*90%*/
+    font-weight: 400;
+    color: var(--accent-text);
+}
+
+.modal__text {
+    margin-bottom: 30px;
+}
+
+.modal__form-lable {
+    margin-bottom: 10px;
+}
+
+.field {
+    /*приписка к почте*/
+    position: relative;
+    display: block;
+}
+
+.field span {
+    position: absolute;
+    top: 12px;
+    left: 28px;
+    font-size: 11px;
+    color: #AC907A;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.field__input {
+    display: block;
+    width: 100%;
+    border: 1px solid #AC907A;
+    border-radius: 100px;
+    padding: 19px 41px 19px 28px;
+    background: #00000000;
+    font-size: 16px;
+}
+
+.field__input:hover {
+    border-color: var(--a);
+}
+
+.field__input::placeholder {
+    color: #AC907A;
+    transition: var(--transition);
+}
+
+.field__input:hover::placeholder {
+    color: var(--accent-color);
+}
+
+.field__input:focus {
+    padding: 26px 42px 12px 28px;
+}
+
+.field__input:focus+span {
+    opacity: 1;
+    visibility: visible;
+}
