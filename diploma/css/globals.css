@@ -1,0 +1,46 @@
+/* ==========ОБЩИЕ СТИЛИ======= */
+
+:root {
+    --f-size: 24px;
+    --general-color-w: #FFF;
+    --general-color-b: #000;
+    --general-bg: #FFF;
+    --accent-color: #f05a26;
+    --transition: all .4s;
+}
+
+.body {
+    font-family: "Inter", "Arial", sans-serif;
+    background: var(--general-bg);
+}
+
+.wrapper {
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    /* padding: 0 15px; */
+    height: 100%;
+}
+
+/* .button {
+}  */
+/* .title {
+}*/
+
+.main__about {
+    /* padding: 0  278px 72px 124px; */
+    padding-left: 124px;
+    padding-bottom: 72px;
+}
+
