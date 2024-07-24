@@ -1,0 +1,96 @@
+/*Подключение стилей*/
+@import "fonts.css";
+@import "reset.css";
+@import "globals.css";
+@import "header.css";
+/* @import "footer.css";  */
+
+/* =========ABOOUT============= */
+
+.about {}
+
+
+.about__title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+.about__inner {
+    margin-bottom: 52px;
+}
+
+.tab-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 274px;
+}
+
+.tab-controls__item {
+    padding-right: 32px;
+}
+
+.tab-controls__item:last-child {
+    padding-right: 0;
+}
+
+.tab-controls__link {
+    display: block;
+    padding: 17px 30px 17px 25px;
+    transition: var(--transition);
+    white-space: nowrap;
+    background: #f0eeee;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.tab-controls__link--active {
+    background: var(--accent-color);
+    color: var(--general-color-w);
+}
+
+.about__tab-content {
+    margin-bottom: 40px;
+}
+
+.tab-content {}
+
+.tab-content--show {}
+
+.about__tab-list {
+    max-width: 306px;
+    background-repeat: 102px;
+}
+
+.accordion-list__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-list__control {
+    margin-right: 93px;
+}
+
+.accordion-list__control-title {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 22px;
+    margin-bottom: 16px;
+}
+
+.accordion-list__control-text {
+    min-width: 306px;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.example__text {
+    color: var(--accent-color);
+    line-height: 29px;
+    
+}

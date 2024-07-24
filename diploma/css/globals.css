@@ -1,0 +1,46 @@
+:root {
+    --general-color-w: #FFF;
+    --accent-color: #f05a26;
+    --transition: all .4s;
+}
+
+/* ==========ОБЩИЕ СТИЛИ======= */
+
+.body {
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #000;
+}
+
+.wrapper {
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 15px;
+    height: 100%;
+}
+/* =========================== */
+
+.content,
+.about {
+    padding-left: 124px;
+}
+
+/* .main {
+    flex-grow: 1;
+} */
+
+.main__about {
+    /* padding: 0  278px 72px 124px; */
+    /* padding-left: 124px;
+    padding-bottom: 72px; */
+}
+
