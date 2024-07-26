@@ -205,7 +205,7 @@
                     Кликайте по картике, чтобы листать фото проекта. Стрелки переключат проект.
                 </p>
 
-                <div class="project__img">
+                <!-- <div class="project__img">
                     <button class="project__prev swiper-button-disabled" type="button" tabindex="-1"
                         aria-label="Previous slide" aria-controls="swiper-wrapper-258d66c0c103ff101f"
                         aria-disabled="true" disabled="">
@@ -220,8 +220,8 @@
                         </svg>
 
                     </button>
-                        <img src="images/decor/Rectangle2.jpg" alt="Открытые двери">
-                    
+                    <img src="images/decor/Rectangle2.jpg" alt="Открытые двери">
+
                     <div class="testimonials__scrollbar swiper-scrollbar swiper-scrollbar-horizontal"
                         style="transition-duration: 0ms;">
                         <div class="swiper-scrollbar-drag"
@@ -252,36 +252,52 @@
 
                         </button>
                     </div>
-                    <div class="project__pagination">
-                        <div class="project__pagination swiper-pagination-fraction swiper-pagination-horizontal">
-                            <span class="swiper-pagination-current">3</span>
-                            /
-                            <span class="swiper-pagination-total">7</span>
-                        </div>
+                </div> -->
 
-                        <p class="project__text">ЖК «Рассказово» — трехкомнатная квартира в французском стиле: серые
+                <div class="project__main">
+                    <div class="project__main-background">
+                        <button class="project__prew swiper-button-disabled" type="button">
+                            <img src="images/icon/ArrowL.svg" class="progect_img-left" alt="">
+                        </button>
+                        <img class="progect_img-decor" src="images/decor/Rectangle2.jpg" alt="Открытые двери">
+                        <button class="project__next" type="button">
+                            <img class="progect_img-right" src="images/icon/ArrowR.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project__footer">
+                    <div class="project__info">
+                        <div class="project__pagination swiper-pagination-fraction swiper-pagination-horizontal">
+                            3/7
+                        </div>
+                        <p class="project__info-text">ЖК «Рассказово» — трехкомнатная квартира в французском стиле:
+                            серые
                             стены, тёмный паркет, классические двери, высокий белый плинтус.</p>
+                    </div>
+                    <div class="project__accent">
                         <ul class="project__info">
 
-                            <li class="project__info-term">
+                            <li class="project__info-estimates">
                                 площадь
                                 <span>67 м²</span>
                             </li>
-                            <li class="project__info-square">
+                            <li class="project__info-estimates">
                                 срок ремонта
                                 <span>3 месяца</span>
                             </li>
-                            <li class="project__info-square">
+                            <li class="project__info-estimates">
                                 на материалы
                                 <span>2 400 000 ₽</span>
                             </li>
-                            <li class="project__info-square">
+                            <li class="project__info-estimates">
                                 за работу
                                 <span>1 250 000 ₽</span>
                             </li>
                         </ul>
                     </div>
                 </div>
+            </div>
         </section>
 
         <footer class="footer"></footer>
@@ -302,7 +318,7 @@
                     </label>
                     <label class="modal__form-lable field">
                         Удобное время для звонка
-                        <input class="field__input" type="datetime" name="datetime">
+                        <input class="field__input" type="datetime-local" name="datetime">
                     </label>
                 </form>
                 <p class="modal__text">
