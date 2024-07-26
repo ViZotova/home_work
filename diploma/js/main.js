@@ -27,19 +27,6 @@ burgerMenu('.header__block');
 
 //TABS
 
-    // const tabItem = document.querySelectorAll('.tab__item');
-    // const aboutContent = document.querySelectorAll('.about__content');
-
-    // for (let item of tabItem) {
-    //     item.addEventListener('click', function() {
-
-    //         for(let element of aboutContent) {
-    //             element.classList.add('hidden')
-    //         }
-    //         const content = document.querySelector('#' + item.dataset.tab)
-    //         content.classList.remove('hidden')
-    //     }) 
-    // }
 
     const tabControls = document.querySelector('.tab-conrols') 
     tabControls.addEventListener('click', toggleTab)
@@ -52,7 +39,7 @@ burgerMenu('.header__block');
         
 
         const tabContentID = tabControl.getAttribute('href') 
-
+        const tabContent = document.querySelector(tabContentID)
         const activeControl = document.querySelector('.tab-conrols__link--active')
         const activeContent = document.querySelector('.tab-content--show')
 
