@@ -31,7 +31,9 @@
 
 .content,
 .main__about,
-.main__project {
+.main__project,
+.main__discount,
+.main__why {
     padding-left: 124px;
 }
 
