@@ -33,8 +33,10 @@
 .main__about,
 .main__project,
 .main__discount,
-.main__why {
+.main__why,
+.main__customers {
     padding-left: 124px;
+
 }
 
 /* =============MODAL============== */
