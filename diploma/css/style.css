@@ -186,7 +186,7 @@ max-width: 886px;
 /* =========DISCONT============= */
 
 .discount {
-    margin-bottom: 80px;
+    margin-bottom: 76px;
 }
 
 .discount__title {
@@ -274,4 +274,19 @@ max-width: 886px;
     font-size: 18px;
     font-weight: 400;
     line-height: 27px;
+    
 }
+
+/* =========WHY============= */
+
+.why {
+    background: #f0eeee;
+}
+
+.why__example-text {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    margin: 78px 124px;
+}
+
