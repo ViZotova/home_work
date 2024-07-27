@@ -88,6 +88,7 @@
 
 .project {
     background: #f0eeee;
+    margin-bottom: 80px;
 }
 
 .project__title {
@@ -182,3 +183,95 @@ max-width: 886px;
 
 }
 
+/* =========DISCONT============= */
+
+.discount {
+    margin-bottom: 80px;
+}
+
+.discount__title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    margin-bottom: 32px;
+}
+
+.discount__info {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.discount__info-accent {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    margin-bottom: 16px;
+}
+
+.discount__text {
+    margin-bottom: 16px;
+    margin-right: 134px;
+}
+
+.discount__text-accent{
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 44px;
+}
+
+.discount__example-text {
+}
+
+.example__text {}
+
+
+
+
+.discont__cost {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    
+}
+
+.discont__cost-option {
+    margin-right: 102px;
+    max-width: 510px;
+}
+
+.discont__cost-option:last-child {
+    margin-right: 0;
+}
+
+.discont__cost-img {
+    margin-bottom: 24px;
+}
+
+.discont__cost-global {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.discont__cost-title {
+    font-weight: 400;
+    line-height: 29px;
+}
+
+.discont__cost-prices {
+    font-weight: 400;
+    line-height: 29px;
+}
+
+.discont__cost-text {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #999;
+    margin-bottom: 24px;
+}
+
+.discont__cost-example {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+}
