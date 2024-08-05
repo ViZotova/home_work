@@ -3,7 +3,7 @@
 @import "reset.css";
 @import "globals.css";
 @import "header.css";
-@import "footer.css"; 
+@import "footer.css";
 
 /* =========ABOOUT============= */
 
@@ -103,37 +103,7 @@
     margin-bottom: 40px;
 }
 
-.project__main-background {
-    background: #e5e5e5;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    width: 1192px;
-}
-
-.progect_img-left {
-    left: 41px;
-    right: 40px;
-}
-
-.progect_img-right {
-    right: 41px;
-}
-
-.progect_img-left,
-.progect_img-right {
-    position: absolute;
-    top: 258px;
-    width: 24px;
-    height: 42px;
-    transition: var(--transition);
-}
-
-.progect_img-left:hover,
-.progect_img-right:hover {
-    transform: scale(1.2);
-}
-
+/* ------------ */
 
 .project__footer {
     margin-bottom: 85px;
@@ -148,23 +118,15 @@
     font-weight: 400;
     line-height: 27px;
     margin-bottom: 16px;
-    
+
 }
 
 .project__pagination {
     margin-right: 63px;
 }
 
-.swiper-pagination-fraction {}
-
-.swiper-pagination-horizontal {}
-
-.swiper-pagination-current {}
-
-.swiper-pagination-total {}
-
 .project__info-text {
-max-width: 886px;
+    max-width: 886px;
 }
 
 .project__accent span {
@@ -175,6 +137,84 @@ max-width: 886px;
 .project__info-estimates {
     margin-left: 90px;
 
+}
+/* ------------ */
+
+.slider {
+    margin: 0 102px;
+    max-width: 988px;
+}
+
+.slide_viewer {
+    height: 340px;
+    position: relative;
+}
+
+.slide_group {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.slide {
+    display: none;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.slide:first-child {
+    display: block;
+}
+
+
+.slide_buttons {
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+}
+
+a.slide_btn {
+    color: #474544;
+    font-size: 42px;
+    margin: 0 0.175em;
+}
+
+.slide_btn.active,
+.slide_btn:hover {
+    cursor: pointer;
+}
+
+.directional_nav {
+    height: 242px;
+    max-width: 1090px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    left: 100px;
+    bottom: 76px;
+}
+
+.previous_btn {
+    left: -25px;
+}
+
+.next_btn {
+    right: -25px;
+}
+
+.previous_btn,
+.next_btn {
+    position: absolute;
+    cursor: pointer;
+    height: 40px;
+    opacity: 0.5;
+}
+
+.previous_btn:hover,
+.next_btn:hover {
+    opacity: 1;
 }
 
 /* =========DISCONT============= */
@@ -207,19 +247,18 @@ max-width: 886px;
     margin-right: 134px;
 }
 
-.discount__text-accent{
+.discount__text-accent {
     font-size: 36px;
     font-weight: 400;
     line-height: 44px;
 }
 
-.discount__example-text {
-}
+.discount__example-text {}
 
 .discont__cost {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    
+
 }
 
 .discont__cost-option {
@@ -265,7 +304,7 @@ max-width: 886px;
     line-height: 27px;
     cursor: pointer;
     transition: var(--transition);
-    
+
 }
 
 /* =========WHY============= */
@@ -273,13 +312,15 @@ max-width: 886px;
 .why {
     background: #f0eeee;
     margin-bottom: 80px;
+    height: 200px;
+    
 }
 
 .why__example-text {
     font-size: 36px;
     font-weight: 700;
     line-height: 44px;
-    margin: 78px 124px;
+    padding: 78px 0;
 }
 
 /* =========CUSTOMERS============= */
@@ -320,6 +361,7 @@ max-width: 886px;
 .customers__feedback-info path {
     transition: var(--transition);
 }
+
 .customers__feedback-info path:hover {
     fill: var(--accent-color);
 }
@@ -332,7 +374,7 @@ max-width: 886px;
 
 .calk {
     margin-bottom: 80px;
-    
+
     background: #f0eeee;
 }
 
@@ -344,9 +386,7 @@ max-width: 886px;
     margin-top: 70px;
 }
 
-.calk__row {
-    
-}
+.calk__row {}
 
 .calk__col {
     display: grid;
@@ -366,8 +406,7 @@ max-width: 886px;
 
 }
 
-.calk__square {
-}
+.calk__square {}
 
 .calk__square-set {
     border-bottom: 1px solid #999;
@@ -430,13 +469,13 @@ max-width: 886px;
 
 .previous,
 .next {
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 22px;
-        color: rgb(255, 255, 255);
-        background: #ccc;
-        padding: 17px 50px 17px 50px;
-        transition: var(--transition);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    color: rgb(255, 255, 255);
+    background: #ccc;
+    padding: 17px 50px 17px 50px;
+    transition: var(--transition);
 }
 
 .previous:hover,
