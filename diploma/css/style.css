@@ -352,6 +352,7 @@ a.slide_btn {
 
 .customers__feedback-info svg {
     transform: translate(250px, -210px);
+    cursor: pointer;
 }
 
 .customers__feedback-info path {
