@@ -404,7 +404,6 @@
                 <h2 class="calk__title">
                     Рассчитайте стоимость ремонта
                 </h2>
-                <div class="calk__row">
                     <div class="calk__col">
                         <div class="calk__box">
                             <p class="calk__box-text">
@@ -419,26 +418,26 @@
                             <p class="calk__box-text">
                                 Комнаты
                             </p>
-                            <ul class="calc__box-list">
-                                <li class="calk__box-item">
-                                    <a class="calk__box-link" href="#"><span>студия</span></a>
-                                </li>
-                                <li class="calk__box-item">
-                                    <a class="calk__box-link" href="#">1</a>
-                                </li>
-                                <li class="calk__box-item">
-                                    <a class="calk__box-link" href="#">2</a>
-                                </li>
-                                <li class="calk__box-item">
-                                    <a class="calk__box-link" href="#">3</a>
-                                </li>
-                                <li class="calk__box-item">
-                                    <a class="calk__box-link" href="#">4</a>
-                                </li>
-                                <li class="calk__box-item">
-                                    <a class="calk__box-link" href="#">5</a>
-                                </li>
-                            </ul>
+                            <div class="calk__box-btn">
+                                <button class="calk__box-link">
+                                    <span>студия</span>
+                                </button>
+                                <button class="calk__box-link button--active">
+                                    1
+                                </button>
+                                <button class="calk__box-link">
+                                    2
+                                </button>
+                                <button class="calk__box-link">
+                                    3
+                                </button>
+                                <button class="calk__box-link">
+                                    4
+                                </button>
+                                <button class="calk__box-link">
+                                    5
+                                </button>
+                            </div>
                         </div>
 
 
@@ -446,19 +445,16 @@
                             <p class="calk__box-text">
                                 Тип помещения
                             </p>
-
-
-                            <div class="calc__box-list" id="calculator">
-                                <div class="calk__box-item">
-                                    <label class="calk__box-link js-service-active" for="new">Новостройка</label>
-                                </div>
-                                <div class="calk__box-item">
-                                    <label class="calk__box-link" for="secondary">Вторичка</label>
-                                </div>
-                            </div>
+                            <div class="calk__box-btn">
+                                <button class="calk__box-link">
+                                    Новостройка
+                                </button>
+                                <button class="calk__box-link button--active">
+                                    Вторичка
+                                </button>
                         </div>
                     </div>
-                </div>
+                
 
                 <div class="calk__footer">
                     <div class="calk__btn">
@@ -468,7 +464,7 @@
                         <a href="#" class="next">
                             Далее
                         </a>
-
+                        
                     </div>
                     <p class="calk__step">
                         к шагу <span>2</span> из <span>4</span>
@@ -476,6 +472,7 @@
                 </div>
             </div>
         </section>
+
 
         <footer class="main__footer footer">
             <div class="container">
