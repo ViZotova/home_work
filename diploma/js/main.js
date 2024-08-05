@@ -121,3 +121,10 @@ burgerMenu('.header__block');
             }
         }
     });
+
+    // BUTTON
+
+const button = document.querySelector(".calk__box-link");
+button.addEventListener("click", () => {
+    button.classList.add("button--active");
+});
