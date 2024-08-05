@@ -206,15 +206,30 @@
                     Кликайте по картике, чтобы листать фото проекта. Стрелки переключат проект.
                 </p>
 
-                <div class="project__main">
-                    <div class="project__main-background">
-                        <button class="project__prew swiper-button-disabled" type="button">
-                            <img src="images/icon/ArrowL.svg" class="progect_img-left" alt="">
-                        </button>
-                        <img class="progect_img-decor" src="images/decor/Rectangle2.jpg" alt="Открытые двери">
-                        <button class="project__next" type="button">
-                            <img class="progect_img-right" src="images/icon/ArrowR.svg" alt="">
-                        </button>
+
+                <!-- SLIDE -->
+                <div class="slider">
+                    <div class="slide_viewer">
+                        <ul class="slide_group">
+                            <li class="slide">
+                                <img src="images/decor/Rectangle2.jpg" alt="">
+                            </li>
+                            <li class="slide">
+                                <img src="images/decor/Rectangle2-3.jpg" alt="">
+                            </li>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide_buttons">
+                </div>
+
+                <div class="directional_nav">
+                    <div class="previous_btn">
+                        <img src="images/icon/ArrowL.svg" alt="">
+                    </div>
+                    <div class="next_btn">
+                        <img src="images/icon/ArrowR.svg" alt="">
                     </div>
                 </div>
 
@@ -338,9 +353,11 @@
         </section>
         <!-- =====WHY===== -->
         <section class="main__why why">
-            <p class="why__example-text example__text">
+            <div class="container">
+                <p class="why__example-text example__text">
                 Почему у конкуретнов дешевле в два раза?
-            </p>
+                </p>
+            </div>
         </section>
         <!-- =====CUSTOMERS===== -->
         <section class="main__customers customers">
@@ -619,7 +636,7 @@
         </div>
 
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="JS/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
