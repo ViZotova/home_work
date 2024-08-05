@@ -90,10 +90,17 @@ burgerMenu('.header__block');
         }
     }
 
-    
-        //Cлайдер / Project / https://swiperjs.com
 
-    new Swiper('.gallery__slider', {
+    //Маска телефона
+    const telInputs = document.querySelectorAll ('input[type="tel"]')
+    const im = new Inputmask('+7 (999) 999-99-99')
+    im.mask(telInputs)
+
+
+//Cлайдер / Gallery / https://swiperjs.com
+
+
+    new Swiper('.directional_nav', {
 
         spaceBetween: 15,
         slidesPerView: 1.5,
@@ -104,19 +111,13 @@ burgerMenu('.header__block');
         },
 
         navigation: {
-            nextEl: '.gallery__next',
-            prevEl: '.gallery__prev',
+            nextEl: '.next_btn',
+            prevEl: '.previous_btn',
         },
 
         breakpoints: {
-            601: {
-                slidesPerView: 3,
-            },
-            801: {
-                spaceBetween: 32,
-            },
-            1101: {
-                slidesPerView: 4,
+            1440: {
+                slidesPerView: 1,
             }
         }
     });
