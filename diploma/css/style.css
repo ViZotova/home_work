@@ -1,0 +1,196 @@
+/*Подключение стилей*/
+@import "fonts.css";
+@import "reset.css";
+@import "globals.css";
+@import "header.css";
+@import "about.css";
+@import "project.css";
+@import "discont.css";
+@import "footer.css";
+
+
+
+
+
+/* =========WHY============= */
+
+.why {
+    background: #f0eeee;
+    margin-bottom: 80px;
+    height: 200px;
+    
+}
+
+.why__example-text {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    padding: 78px 0;
+}
+
+/* =========CUSTOMERS============= */
+
+.customers {
+    margin-bottom: 81px;
+}
+
+.customers__title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    margin-bottom: 16px;
+}
+
+.customers__text {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #999;
+    margin-bottom: 48px;
+}
+
+.customers__feedback {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: -15px;
+}
+
+.customers__feedback-info {
+    margin-left: 32px;
+}
+
+.customers__feedback-info svg {
+    transform: translate(250px, -210px);
+    cursor: pointer;
+}
+
+.customers__feedback-info path {
+    transition: var(--transition);
+}
+
+.customers__feedback-info path:hover {
+    fill: var(--accent-color);
+}
+
+.customers__feedback-info:last-child {
+    margin-left: 0;
+}
+
+/* =========CALK============= */
+
+.calk {
+    margin-bottom: 80px;
+    background: #f0eeee;
+}
+
+.calk__title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    margin-bottom: 35px;
+    padding-top: 70px;
+}
+
+.calk__row {
+    
+}
+
+.calk__col {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1.2fr;
+}
+
+.calk__box {
+    margin-bottom: 88px;
+    margin-right: 150px;
+}
+
+.calk__box-text {
+    margin-bottom: 35px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+
+}
+
+.calk__square-set {
+    border-bottom: 1px solid #999;
+    font-size: 24px;
+    max-width: 140px;
+}
+
+.calk__square-set::placeholder {
+    color: #000;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    max-width: 140px;
+    background: #f0eeee;
+}
+
+.calk__box-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calk__box-link {
+    margin-bottom: auto;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+}
+
+.calk__box-link span {
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.button--active {
+    box-sizing: border-box;
+    border: 2px solid var(--accent-color);
+
+}
+
+.calk__footer {
+    display: flex;
+}
+
+.calk__btn {
+    min-width: 172px;
+    height: 56px;
+}
+
+.previous {
+    margin-right: 32px;
+}
+
+.next {
+    margin-right: 32px;
+}
+
+.previous,
+.next {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    color: rgb(255, 255, 255);
+    background: #ccc;
+    padding: 17px 40px 17px 48px;
+    transition: var(--transition);
+}
+
+.previous:hover,
+.next:hover {
+    background: var(--accent-color);
+    color: var(--general-color-w);
+}
+
+.calk__step {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #ccc;
+}
+
+/* ======================MEDIA========================= */
+
