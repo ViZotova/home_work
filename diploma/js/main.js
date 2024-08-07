@@ -96,10 +96,22 @@ burgerMenu('.header__block');
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
-            // dynamicBullets: true,
         },
         
     });
+
+
+const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
+
+swiper.on('slideChange', function () {
+    console.log('Слайд изменен: ' + swiper.activeIndex);
+})
 
 // CLIC
 // function changeImg () {
@@ -112,8 +124,13 @@ burgerMenu('.header__block');
 //     }
 // }
 
-let currentIndex = 0;
-const images = [
+let currentIndex1 = 0;
+let currentIndex2 = 0;
+let currentIndex3 = 0;
+let currentIndex4 = 0;
+let currentIndex5 = 0;
+
+const images1 = [
     'images/decor/Rectangle2.jpg', 
     'images/decor/Rectangle2-2.jpg', 
     'images/decor/Rectangle2-3.jpg',
@@ -122,11 +139,67 @@ const images = [
     'images/decor/Rectangle2-5.jpg',
     'images/decor/Rectangle2-5.jpg',
 ];
+const images2 = [
+    'images/decor/Rectangle2-2.jpg', 
+    'images/decor/Rectangle2-2.jpg', 
+    'images/decor/Rectangle2-3.jpg',
+    'images/decor/Rectangle2-4.jpg',
+    'images/decor/Rectangle2-5.jpg',
+    'images/decor/Rectangle2-5.jpg',
+    'images/decor/Rectangle2-5.jpg',
+];
+const images3 = [
+    'images/decor/Rectangle2-3.jpg', 
+    'images/decor/Rectangle2-2.jpg', 
+    'images/decor/Rectangle2-3.jpg',
+    'images/decor/Rectangle2-4.jpg',
+    'images/decor/Rectangle2-5.jpg',
+    'images/decor/Rectangle2-5.jpg',
+    'images/decor/Rectangle2-5.jpg',
+];
+const images4 = [
+    'images/decor/Rectangle2-3.jpg', 
+    'images/decor/Rectangle2-2.jpg', 
+    'images/decor/Rectangle2-3.jpg',
+    'images/decor/Rectangle2-4.jpg',
+    'images/decor/Rectangle2-5.jpg',
+    'images/decor/Rectangle2-5.jpg',
+    'images/decor/Rectangle2-5.jpg',
+];
+const images5 = [
+    'images/decor/Rectangle2-3.jpg', 
+    'images/decor/Rectangle2-2.jpg', 
+    'images/decor/Rectangle2-3.jpg',
+    'images/decor/Rectangle2-4.jpg',
+    'images/decor/Rectangle2-5.jpg',
+    'images/decor/Rectangle2-5.jpg',
+    'images/decor/Rectangle2-5.jpg',
+];
 
-function changeImg() {
-    let image = document.getElementById('img1');
-    currentIndex = (currentIndex + 1) % images.length; 
-    image.src = images[currentIndex]; 
+function changeImg1() {
+    let image1 = document.getElementById('img1');
+    currentIndex1 = (currentIndex1 + 1) % images1.length;
+    image1.src = images1[currentIndex1];
+}
+function changeImg2() {
+    let image2 = document.getElementById('img2');
+    currentIndex2 = (currentIndex2 + 1) % images2.length;
+    image2.src = images2[currentIndex2];
+}
+function changeImg3() {
+    let image3 = document.getElementById('img3');
+    currentIndex3 = (currentIndex3 + 1) % images3.length;
+    image3.src = images3[currentIndex3];
+}
+function changeImg4() {
+    let image4 = document.getElementById('img4');
+    currentIndex4 = (currentIndex4 + 1) % images4.length;
+    image4.src = images4[currentIndex4];
+}
+function changeImg5() {
+    let image5 = document.getElementById('img5');
+    currentIndex5 = (currentIndex5 + 1) % images5.length;
+    image5.src = images5[currentIndex5];
 }
 
     // BUTTON
