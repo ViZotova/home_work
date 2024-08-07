@@ -22,9 +22,11 @@
     overflow: hidden;
 }
 
+
 .image-slider {
     width: 100%;
     position: relative;
+    height: auto;
 }
 
 .image-slider::after {
@@ -95,7 +97,7 @@
     transition: var(--transition);
 }
 
-.image-slider .swiper-pagination-bullet:hover {
+.swiper-slide.swiper-pagination-bullet-active {
     width: 32px;
     height: 8px;
     background: var(--accent-color);
