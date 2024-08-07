@@ -85,29 +85,27 @@ burgerMenu('.header__block');
 //Cлайдер / Gallery / https://swiperjs.com
 
     // Инициализация Swiper
-
-    const swiper = new Swiper('.swiper', {
+    new Swiper('.image-slider', {
+        slidesPerView: 1,
+        //Arrow
         navigation: {
             nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            prevEl: '.swiper-button-prev'
         },
+        //Pagination
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
+            // dynamicBullets: true,
         },
-        loop: true, // Зацикливание слайдов
-        autoplay: {
-            delay: 3000, // Задержка между переключением
-            disableOnInteraction: false,
-        },
-        effect: 'slide', // Эффект перехода
+        
     });
 
 
 
     // BUTTON
 
-const button = document.querySelector(".calk__box-link");
-button.addEventListener("click", () => {
-    button.classList.add("button--active");
-});
+// const button = document.querySelector(".calk__box-link");
+// button.addEventListener("click", () => {
+//     button.classList.add("button--active");
+// });
