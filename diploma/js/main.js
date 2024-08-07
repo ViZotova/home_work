@@ -101,7 +101,33 @@ burgerMenu('.header__block');
         
     });
 
+// CLIC
+// function changeImg () {
+//     let image = document.getElementById ('img1');
 
+//     if(image.src.match('images/decor/Rectangle2.jpg')) {
+//         image.src = 'images/decor/Rectangle2-2.jpg'
+//     } else {
+//         image.src = 'images/decor/Rectangle2.jpg'
+//     }
+// }
+
+let currentIndex = 0;
+const images = [
+    'images/decor/Rectangle2.jpg', 
+    'images/decor/Rectangle2-2.jpg', 
+    'images/decor/Rectangle2-3.jpg',
+    'images/decor/Rectangle2-4.jpg',
+    'images/decor/Rectangle2-5.jpg',
+    'images/decor/Rectangle2-5.jpg',
+    'images/decor/Rectangle2-5.jpg',
+];
+
+function changeImg() {
+    let image = document.getElementById('img1');
+    currentIndex = (currentIndex + 1) % images.length; 
+    image.src = images[currentIndex]; 
+}
 
     // BUTTON
 
