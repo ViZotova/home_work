@@ -3,7 +3,6 @@
 .project {
     margin-bottom: 80px;
     background: #f0eeee;
-    z-index: 5;
 }
 
 .project__title {
@@ -19,12 +18,14 @@
     color: #999;
 }
 
-.project__slider {
+.swiper-container {}
+
+.image-slider {
+    width: 100%;
     position: relative;
-    margin-bottom: 25px;
 }
 
-.project__slider::after {
+.image-slider::after {
     content: "";
     position: absolute;
     background: #e5e5e5;
@@ -35,61 +36,69 @@
     width: 102px;
 }
 
-.project__slider::before {
+.image-slider::before {
     content: "";
     position: absolute;
     background: #e5e5e5;
     top: 0;
     bottom: 0;
     width: 102px;
-    right: 217px;
+    right: 220px;
 }
 
-.project__slider img {
-    width: 988px;
-    height: 556px;
-    margin-left: 102px;
+.image-slider__wrapper {}
+
+.swiper-wrapper {}
+
+.image-slider__slide {
+
 }
-
-.swiper {
-    width: 100%;
-    height: 100%;
-}
-
-.project__wrapper {}
-
-.swiper-wrapper {
-}
-
-.project__slide {}
 
 .swiper-slide {}
 
-.project__nav {
-    position: absolute;
-    z-index: 10;
-    top: 260px;
+.image-slider__image {
+    margin-left: 102px;
+    cursor: pointer;
 }
 
-.project__prev {
-    position: absolute;
-    left: 40px;
+.image-slider__image img {
+    max-width: 988px;
 }
 
-.project__next {
-    position: absolute;
-    left: 1130px;
+.image-slider .swiper-button-prev::after,
+.image-slider .swiper-button-next::after {
+    color: #f15a24;
+    max-width: 20px;
 }
-/* ===================== */
-/* .swiper-pagination {
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-} */
-/* ===================== */
+
+.swiper-button-prev {
+    margin-left: 30px;
+}
+
+.swiper-button-next {
+    margin-right: 250px;
+}
+
+.image-slider .swiper-pagination {
+    bottom: 56px;
+    left: -120px;
+}
+
+.image-slider .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #f2f2f2;
+    transition: var(--transition);
+}
+
+.image-slider .swiper-pagination-bullet:hover {
+    width: 32px;
+    height: 8px;
+    background: var(--accent-color);
+}
+
+
+/* ------------ */
 
 .project__footer {
     margin-bottom: 85px;
@@ -99,14 +108,11 @@
 
 .project__info {
     display: flex;
+    margin-top: 25px;
     font-size: 18px;
     font-weight: 400;
     line-height: 27px;
     margin-bottom: 16px;
-
-}
-
-.project__pagination {
 }
 
 .project__info-text {
@@ -121,5 +127,4 @@
 
 .project__info-estimates {
     margin-left: 90px;
-
-}
+} 
