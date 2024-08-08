@@ -153,11 +153,16 @@ const totalSlides = swiper.slides.length;
 document.querySelector('.project__pagination').textContent = `1/${totalSlides}`
 
 
-
-
     // BUTTON
 
-// const button = document.querySelector(".calk__box-link");
-// button.addEventListener("click", () => {
-//     button.classList.add("button--active");
-// });
+const buttons = document.querySelectorAll('.calk__box-link');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+
+        buttons.forEach(btn => btn.classList.remove('button--active'));
+        
+        button.classList.add('button--active');
+    });
+})
+
