@@ -84,17 +84,6 @@ burgerMenu('.header__block');
 
 //Cлайдер / Gallery / https://swiperjs.com
 
-    // Инициализация Swiper
-    new Swiper('.image-slider', {
-        slidesPerView: 1,
-        //Arrow
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-        }
-    });
-
-
 // CLIC 
 
 const images = [
@@ -107,43 +96,63 @@ const images = [
 
 let currentIndex = 0;
 
-// Функция для обновления изображения и пагинации
 function updateSlider(slideElement, index) {
     const imgElement = slideElement.querySelector('.active-image');
     imgElement.src = images[index];
 
-    // Обновить пагинацию
     const pagination = slideElement.querySelector('.pagination');
-    pagination.innerHTML = ''; // Очистка текущей пагинации
+    pagination.innerHTML = ''; 
     images.forEach((_, idx) => {
         const dot = document.createElement('div');
         dot.className = idx === index ? 'active' : '';
-        dot.onclick = () => updateSlider(slideElement, idx);
+        dot.onclick = () => {
+            currentIndex = idx; 
+            updateAllSlides(); 
+            
+        };
         pagination.appendChild(dot);
     });
 }
 
-// Инициализация слайдеров
-const slides = document.querySelectorAll('.image-slider__slide');
-slides.forEach(slide => updateSlider(slide, currentIndex));
+function updateAllSlides() {
+    const slides = document.querySelectorAll('.image-slider__slide');
+    slides.forEach(slide => updateSlider(slide, currentIndex));
+}
 
-// Обработчик клика на изображениях для смены
+updateAllSlides();
+
+// Обновление слайдов по клику на изображение
+const slides = document.querySelectorAll('.image-slider__slide');
 slides.forEach(slide => {
     const imgElement = slide.querySelector('.active-image');
     imgElement.onclick = () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateSlider(slide, currentIndex);
+        currentIndex = (currentIndex + 1) % images.length; // 
+        updateAllSlides(); 
     };
-})
+});
 
-// Инициализация слайдера
-updateSlider(currentIndex);
 
-// Обработчик клика на изображении для перехода к следующему
-document.getElementById('active-image').onclick = () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateSlider(currentIndex);
-};
+    // Инициализация Swiper
+    new Swiper('.image-slider', {
+        slidesPerView: 1,
+        //Arrow
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        },
+        on: {
+        slideChange: function () {
+            const currentIndex = this.realIndex + 1; 
+            const totalSlides = this.slides.length; 
+            document.querySelector('.project__pagination').textContent = `${currentIndex}/${totalSlides}`; 
+        },
+    },
+    });
+
+const totalSlides = swiper.slides.length;
+document.querySelector('.project__pagination').textContent = `1/${totalSlides}`
+
+
 
 
     // BUTTON
