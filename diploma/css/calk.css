@@ -20,34 +20,39 @@
 
 .calk__box {
     margin-bottom: 88px;
-    margin-right: 150px;
+    /* margin-right: 150px; */
 }
 
 .calk__box-text {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     font-size: 18px;
 }
 
 .calk__square-set {
     border-bottom: 1px solid var(--color-gray);
     max-width: 140px;
+    font-size: 24px;
 }
 
 .calk__square-set::placeholder {
     color: #000;
+    font-size: 24px;
+    font-weight: 400;
     line-height: 29px;
-    max-width: 140px;
     background: var(--accent-bg);
 }
 
 .calk__box-btn {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 
 .calk__box-link {
     margin-bottom: auto;
     line-height: 29px;
+    font-size: 24px;
+    margin-right: 48px;
+    cursor: pointer;
 }
 
 .calk__box-link span {
@@ -57,8 +62,7 @@
 
 .button--active {
     box-sizing: border-box;
-    border: 2px solid var(--accent-color);
-
+    border: 2px solid #f05a26;
 }
 
 .calk__footer {
