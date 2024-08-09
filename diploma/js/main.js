@@ -157,8 +157,6 @@ document.querySelector('.project__pagination').textContent = 1/$
 
     // BUTTON
 
-
-
 document.querySelectorAll('.calk__box-btn').forEach(box => {
     box.addEventListener('click', event => {
         if (event.target.classList.contains('calk__box-link')) {
@@ -171,4 +169,41 @@ document.querySelectorAll('.calk__box-btn').forEach(box => {
         }
     });
 })
+
+// ПЕРЕКЛЮЧЕНИЕ ПО КНОПКЕ
+
+document.addEventListener('DOMContentLoaded', () => {
+        const steps = document.querySelectorAll('.calk__step1, .calk__step2, .calk__step3');
+        const nextButtons = document.querySelectorAll('.next');
+        const previousButtons = document.querySelectorAll('.previous');
+
+        // Скрываем все шаги, кроме первого
+        steps.forEach((step, index) => {
+            step.style.display = index === 0 ? 'block' : 'none';
+        });
+
+        // Обработчик для кнопок "Далее"
+        nextButtons.forEach((button, index) => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault(); // Предотвращаем переход по ссылке
+                if (index < steps.length - 1) {
+                    steps[index].style.display = 'none'; // Скрываем текущий шаг
+                    steps[index + 1].style.display = 'block'; // Показываем следующий шаг
+                }
+            });
+        });
+
+        // Обработчик для кнопок "Назад"
+        previousButtons.forEach((button, index) => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault(); // Предотвращаем переход по ссылке
+                if (index > 0) {
+                    steps[index].style.display = 'none'; // Скрываем текущий шаг
+                    steps[index - 1].style.display = 'block'; // Показываем предыдущий шаг
+                }
+            });
+        });
+    });
+
+
 
