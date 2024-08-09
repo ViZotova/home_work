@@ -428,49 +428,97 @@
                 <h2 class="calk__title">
                     Рассчитайте стоимость ремонта
                 </h2>
-                <div class="calk__col">
-                    <div class="calk__box">
-                        <p class="calk__box-text">
-                            Площадь квартиры
+                <div class="calk__step1">
+                    <div class="calk__col">
+                        <div class="calk__box">
+                            <p class="calk__box-text">
+                                Площадь квартиры
+                            </p>
+                            <div class="calk__square">
+                                <input class="calk__square-set" name="number" placeholder="75">
+                                м²
+                            </div>
+                        </div>
+
+                        <div class="calk__box" id="rooms">
+                            <p class="calk__box-text">Комнаты</p>
+                            <div class="calk__box-btn">
+                                <button class="calk__box-link" data-value="студия"><span>студия</span></button>
+                                <button class="calk__box-link button--active" data-value="1">1</button>
+                                <button class="calk__box-link" data-value="2">2</button>
+                                <button class="calk__box-link" data-value="3">3</button>
+                                <button class="calk__box-link" data-value="4">4</button>
+                                <button class="calk__box-link" data-value="5">5</button>
+                            </div>
+                        </div>
+                        <div class="calk__box" id="property-type">
+                            <p class="calk__box-text">Тип помещения</p>
+                            <div class="calk__box-btn">
+                                <button class="calk__box-link" data-value="новостройка">Новостройка</button>
+                                <button class="calk__box-link button--active" data-value="вторичка">Вторичка</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calk__footer">
+                        <div class="calk__btn">
+                            <a href="#" class="previous">
+                                Назад
+                            </a>
+                            <a href="#" class="next">
+                                Далее
+                            </a>
+                        </div>
+                        <p class="calk__step">
+                            к шагу <span>2</span> из <span>4</span>
                         </p>
-                        <div class="calk__square">
-                            <input class="calk__square-set" name="number" placeholder="75">
-                            м²
-                        </div>
-                    </div>
-
-                    <div class="calk__box" id="rooms">
-                        <p class="calk__box-text">Комнаты</p>
-                        <div class="calk__box-btn">
-                            <button class="calk__box-link" data-value="студия"><span>студия</span></button>
-                            <button class="calk__box-link button--active" data-value="1">1</button>
-                            <button class="calk__box-link" data-value="2">2</button>
-                            <button class="calk__box-link" data-value="3">3</button>
-                            <button class="calk__box-link" data-value="4">4</button>
-                            <button class="calk__box-link" data-value="5">5</button>
-                        </div>
-                    </div>
-
-                    <div class="calk__box" id="property-type">
-                        <p class="calk__box-text">Тип помещения</p>
-                        <div class="calk__box-btn">
-                            <button class="calk__box-link" data-value="новостройка">Новостройка</button>
-                            <button class="calk__box-link button--active" data-value="вторичка">Вторичка</button>
-                        </div>
                     </div>
                 </div>
-                <div class="calk__footer">
-                    <div class="calk__btn">
-                        <a href="#" class="previous">
-                            Назад
-                        </a>
-                        <a href="#" class="next">
-                            Далее
-                        </a>
+                <div class="calk__step2">
+                    <div class="calk__box" id="rooms">
+                            <p class="calk__box-text">Вид ремонта</p>
+                            <div class="calk__box-btn">
+                                <button class="calk__box-link">Косметический</button>
+                                <button class="calk__box-link">Капитальный</button>
+                                <button class="calk__box-link">Евроремонт</button>
+                                <button class="calk__box-link">Дизайнерский</button>
+                            </div>
+                        </div>
+                    <div class="calk__footer">
+                        <div class="calk__btn">
+                            <a href="#" class="previous">
+                                Назад
+                            </a>
+                            <a href="#" class="next">
+                                Далее
+                            </a>
+                        </div>
+                        <p class="calk__step">
+                            к шагу <span>3</span> из <span>4</span>
+                        </p>
                     </div>
-                    <p class="calk__step">
-                        к шагу <span>2</span> из <span>4</span>
-                    </p>
+                </div>
+                <div class="calk__step3">
+                    <div class="calk__box" id="rooms">
+                            <p class="calk__box-text">Дизайн проект</p>
+                            <div class="calk__box-btn">
+                                <button class="calk__box-link">Есть дизайн-проект</button>
+                                <button class="calk__box-link">Нужен дизайн-проект</button>
+                                <button class="calk__box-link">Без дизайн проекта</button>
+                            </div>
+                        </div>
+                    <div class="calk__footer">
+                        <div class="calk__btn">
+                            <a href="#" class="previous">
+                                Назад
+                            </a>
+                            <a href="#" class="next">
+                                Далее
+                            </a>
+                        </div>
+                        <p class="calk__step">
+                            к шагу <span>4</span> из <span>4</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
