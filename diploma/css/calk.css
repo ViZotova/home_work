@@ -15,23 +15,24 @@
 
 .calk__col {
     display: grid;
-    grid-template-columns: 1fr 1.2fr 1.2fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .calk__box {
     margin-bottom: 88px;
-    /* margin-right: 150px; */
 }
 
 .calk__box-text {
-    margin-bottom: 30px;
     font-size: 18px;
+    margin-bottom: 36px;
 }
+
 
 .calk__square-set {
     border-bottom: 1px solid var(--color-gray);
     max-width: 140px;
     font-size: 24px;
+    margin-top: 15px;
 }
 
 .calk__square-set::placeholder {
@@ -53,7 +54,7 @@
     font-size: 24px;
     margin-right: 48px;
     cursor: pointer;
-    padding: 17px 28px;
+    padding: 17px 22px;
 }
 
 .calk__box-link span {
