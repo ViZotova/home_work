@@ -157,17 +157,18 @@ document.querySelector('.project__pagination').textContent = 1/$
 
     // BUTTON
 
-document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.calk__box-link');
 
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Удаляем класс 'button--active' у всех кнопок
-            buttons.forEach(btn => btn.classList.remove('button--active'));
 
+document.querySelectorAll('.calk__box-btn').forEach(box => {
+    box.addEventListener('click', event => {
+        if (event.target.classList.contains('calk__box-link')) {
+            // Удаляем класс 'button--active' у всех кнопок в текущем блоке
+            box.querySelectorAll('.calk__box-link').forEach(button => {
+                button.classList.remove('button--active');
+            });
             // Добавляем класс 'button--active' к нажатой кнопке
-            button.classList.add('button--active');
-        });
+            event.target.classList.add('button--active');
+        }
     });
-});
+})
 
