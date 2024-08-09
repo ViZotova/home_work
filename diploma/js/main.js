@@ -133,36 +133,41 @@ slides.forEach(slide => {
 
 
     // Инициализация Swiper
-    new Swiper('.image-slider', {
-        slidesPerView: 1,
-        //Arrow
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-        },
-        on: {
+const swiper = new Swiper('.image-slider', {
+    slidesPerView: 1,
+    // Arrow
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    },
+    on: {
         slideChange: function () {
             const currentIndex = this.realIndex + 1; 
             const totalSlides = this.slides.length; 
-            document.querySelector('.project__pagination').textContent = `${currentIndex}/${totalSlides}`; 
+            document.querySelector('.project__pagination').textContent = `$\{currentIndex\}/$\{totalSlides\}`; 
         },
     },
-    });
+});
 
+// Устанавливаем начальное значение пагинации
 const totalSlides = swiper.slides.length;
-document.querySelector('.project__pagination').textContent = `1/${totalSlides}`
+document.querySelector('.project__pagination').textContent = 1/$
+{totalSlides};
 
 
     // BUTTON
 
-const buttons = document.querySelectorAll('.calk__box-link');
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.calk__box-link');
 
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Удаляем класс 'button--active' у всех кнопок
+            buttons.forEach(btn => btn.classList.remove('button--active'));
 
-        buttons.forEach(btn => btn.classList.remove('button--active'));
-        
-        button.classList.add('button--active');
+            // Добавляем класс 'button--active' к нажатой кнопке
+            button.classList.add('button--active');
+        });
     });
-})
+});
 
