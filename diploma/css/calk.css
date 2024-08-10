@@ -64,6 +64,7 @@
 .button--active {
     box-sizing: border-box;
     border: 2px solid #f05a26;
+    color: var(--accent-color);
 }
 
 .calk__footer {
