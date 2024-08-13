@@ -260,6 +260,6 @@
     object-fit: cover;
 }
 
-
-/* ============ */
-
+.header__img-media {
+    display: none;
+}
