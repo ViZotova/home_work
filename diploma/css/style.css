@@ -1,0 +1,59 @@
+/*Подключение стилей*/
+@import "fonts.css";
+@import "reset.css";
+@import "globals.css";
+@import "header.css";
+@import "about.css";
+@import "project.css";
+@import "discont.css";
+@import "customers.css";
+@import "calk.css";
+@import "footer.css";
+
+
+/* =========WHY============= */
+
+.why {
+    background: var(--accent-bg);
+    margin-bottom: var(--accent-mb);
+    height: 200px;
+}
+
+.why__example-text {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    padding: 78px 0;
+    border-bottom: 1px solid var(--accent-bg);
+}
+
+/* ======================MEDIA========================= */
+
+@media (max-width: 1100px) {}
+
+@media (max-width: 900px) {}
+
+@media (max-width: 800px) {}
+
+@media (max-width: 768px) {
+    .header__top-number {
+            display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .header__top-number {
+        display: none;
+    }
+
+    .hero__img {
+        display: none;
+    }
+}
+
+
+@media (max-width: 360px) {
+    /* header */
+
+}
+
