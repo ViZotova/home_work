@@ -85,11 +85,16 @@
     .customers__feedback-info:last-child {
         display: none;
     }
-/* ================CALK================== */
+    /* ================CALK================== */
     .calk__col {
         display: block;
         margin: 0 15%;
     }
+
+    .calk__box {
+        margin-bottom: 45px;
+    }
+
     .calk__footer {
         justify-content: center;
     }
