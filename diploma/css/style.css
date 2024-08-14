@@ -82,10 +82,6 @@
         max-width: 510px;
         }
 /* ================CUSTOMERS================== */
-    .customers__feedback {
-        display: block;
-        margin: 0 15%;
-    }
     .customers__feedback-info:last-child {
         display: none;
     }
