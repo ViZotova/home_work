@@ -77,10 +77,10 @@
         left: 466px;
     }
 /* ================DISCONT================== */
-    .discont__cost {
-        display: block;
-        margin: 0 15%;
-    }
+    .discont__cost-option {
+        margin-right: 20px;
+        max-width: 510px;
+        }
 /* ================CUSTOMERS================== */
     .customers__feedback {
         display: block;
