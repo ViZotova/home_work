@@ -229,9 +229,16 @@ window.onclick = function(event) {
 
 // ==========ACCOR=========
 
+const tabControls2 = document.querySelectorAll('.tab-conrols__media');
+const tabContents = document.querySelectorAll('.about__slide-media');
 
+tabControls2.forEach((tab, index) => {
+tab.addEventListener('click', () => {
+    tabContents.forEach(content => content.classList.remove('active'));
 
-
-
-
+    tabContents[index].classList.add('active');
+    tabControls2.forEach(t => t.classList.remove('tab-conrols__media--active'));
+    tab.classList.add('tab-conrols__media--active');
+    });
+});
 
