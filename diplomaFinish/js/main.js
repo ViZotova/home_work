@@ -55,27 +55,21 @@ burgerMenu('.header__block');
     }
 
 
-      //Модальное окно -1
-    const modal = document.querySelector('.modal') 
-    const modalButton = document.querySelector('.header__button')
 
-    modalButton.addEventListener('click', openModal) 
-    modal.addEventListener('click', closeModal) //
+// ==========ACCOR=========
 
-    function openModal(e) {
-        e.preventDefault()
-        document.body.classList.toggle('body--opened-modal')
-    }
+const tabControls2 = document.querySelectorAll('.tab-conrols__media');
+const tabContents = document.querySelectorAll('.about__slide-media');
 
-    function closeModal(e) { 
-        e.preventDefault()
-        const target = e.target 
-        if (target.closest('.modal__cancel') || target.classList.contains('modal')) { 
+tabControls2.forEach((tab, index) => {
+tab.addEventListener('click', () => {
+    tabContents.forEach(content => content.classList.remove('active'));
 
-            document.body.classList.remove('body--opened-modal')
-        }
-    }
-
+    tabContents[index].classList.add('active');
+    tabControls2.forEach(t => t.classList.remove('tab-conrols__media--active'));
+    tab.classList.add('tab-conrols__media--active');
+    });
+});
 
 // CLIC 
 
@@ -146,106 +140,3 @@ const swiper = new Swiper('.image-slider', {
 const totalSlides = swiper.slides.length;
 document.querySelector('.project__pagination').textContent = 1/$
 {totalSlides};
-
-
-    // BUTTON
-
-document.querySelectorAll('.calk__box-btn').forEach(box => {
-    box.addEventListener('click', event => {
-        if (event.target.classList.contains('calk__box-link')) {
-
-            box.querySelectorAll('.calk__box-link').forEach(button => {
-                button.classList.remove('button--active');
-            });
-
-            event.target.classList.add('button--active');
-        }
-    });
-})
-
-// ПЕРЕКЛЮЧЕНИЕ ПО КНОПКЕ
-
-document.addEventListener('DOMContentLoaded', () => {
-        const steps = document.querySelectorAll('.calk__step1, .calk__step2, .calk__step3');
-        const nextButtons = document.querySelectorAll('.next');
-        const previousButtons = document.querySelectorAll('.previous');
-
-        steps.forEach((step, index) => {
-            step.style.display = index === 0 ? 'block' : 'none';
-        });
-
-        nextButtons.forEach((button, index) => {
-            button.addEventListener('click', (event) => {
-                event.preventDefault(); 
-                if (index < steps.length - 1) {
-                    steps[index].style.display = 'none'; 
-                    steps[index + 1].style.display = 'block'; 
-                }
-            });
-        });
-
-        previousButtons.forEach((button, index) => {
-            button.addEventListener('click', (event) => {
-                event.preventDefault(); 
-                if (index > 0) {
-                    steps[index].style.display = 'none'; 
-                    steps[index - 1].style.display = 'block'; 
-                }
-            });
-        });
-    });
-
-//Модальное окно -2
-
-// Загрузка
-document.getElementById('uploadText').addEventListener('click', function() {
-        document.getElementById('fileInput').click();
-    });
-
-    document.getElementById('fileInput').addEventListener('change', function() {
-        const fileName = this.files[0] ? this.files[0].name : 'Нет файла';
-        alert('Вы выбрали файл: ' + fileName);
-    });
-
-    //Открытие и закрытие 
-
-document.getElementById('nextButton').addEventListener('click', function(event) {
-    event.preventDefault(); // Предотвращаем переход по ссылке
-    document.getElementById('modal-2').style.display = 'block'; // Показываем модальное окно
-});
-
-document.getElementById('closeModal').addEventListener('click', function(event) {
-    event.preventDefault(); // Предотвращаем переход по ссылке
-    document.getElementById('modal-2').style.display = 'none'; // Скрываем модальное окно
-});
-
-// Закрытие модального окна при клике вне его
-window.onclick = function(event) {
-    const modal = document.getElementById('modal-2');
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-// ==========ACCOR=========
-
-const tabControls2 = document.querySelectorAll('.tab-conrols__media');
-const tabContents = document.querySelectorAll('.about__slide-media');
-
-tabControls2.forEach((tab, index) => {
-tab.addEventListener('click', () => {
-    tabContents.forEach(content => content.classList.remove('active'));
-
-    tabContents[index].classList.add('active');
-    tabControls2.forEach(t => t.classList.remove('tab-conrols__media--active'));
-    tab.classList.add('tab-conrols__media--active');
-    });
-});
-
-
-
-
-
-
-
-
