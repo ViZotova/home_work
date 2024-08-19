@@ -77,11 +77,11 @@
     font-size: 18px;
 }
 
-.example__text-media {
+.tab-conrols__item svg {
     display: none;
 }
 
-.tab-conrols__item svg {
+.tabs-media {
     display: none;
 }
 
@@ -106,29 +106,17 @@
 
 @media (max-width: 1000px) {
 
-    /* ==============TAB================ */
-
+    /* ==============ACC================ */
+    .tabs,
+    .about__cont,
     .example__text-about {
         display: none;
     }
 
-    .tab-conrols {
+    .tabs-media {
         display: block;
     }
 
-    .example__text-media {
-        display: block;
-        margin-top: 11px;
-        color: rgb(41, 171, 226);
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 24px;
-        white-space: nowrap;
-    }
-
-    .example__text-media:hover {
-        border-bottom: none;
-    }
 
     /* стрелки */
 
@@ -140,7 +128,7 @@
         display: block;
         position: absolute;
         z-index: 11;
-        top: 35%;
+        top: 7%;
         left: 90%;
     }
 
@@ -152,9 +140,36 @@
         stroke: #FFF;
     }
 
-
     /* =========== */
 
+    .tab-conrols__media {
+        text-align: center;
+        padding: 17px 32px 17px 39px;
+        background-color: rgb(240, 238, 238);
+        color: rgb(25, 25, 25);
+        margin-bottom: 39px;
+        cursor: pointer;
+    }
+
+    .tab-conrols__media:hover {
+        background-color: var(--accent-color);
+        color: #FFF;
+    }
+
+    .about__slide-media {
+        margin-bottom: 48px;
+    }
+
+    .about__info-media {
+        margin-bottom: 11px;
+    }
+
+    .example__text-media {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        color: var(--accent-color);
+    }
 }
 
 @media (max-width: 800px) {
@@ -186,7 +201,7 @@
 
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     .header__top {
         margin: 20px -3px 90px 9px;
     }
