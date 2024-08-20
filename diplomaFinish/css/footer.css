@@ -87,6 +87,13 @@
     align-items: center;
 }
 
+.footer__nav-item {
+    margin-right: 40px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+}
+
 .footer__nav-link {
     transition: var(--transition);
 }
