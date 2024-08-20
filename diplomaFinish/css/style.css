@@ -131,7 +131,7 @@
     background: #e5e5e5;
     top: 0;
     bottom: 0;
-    width: 102px;
+    width: 100%;
     right: 93px;
 }
 
@@ -421,7 +421,6 @@
     margin-bottom: auto;
     line-height: 29px;
     font-size: 24px;
-    margin-right: 26px;
     cursor: pointer;
     padding: 17px 22px;
     background-color: inherit;
