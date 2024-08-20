@@ -398,9 +398,9 @@
 
 .calk__square-set {
     border-bottom: 1px solid var(--color-gray);
-    max-width: 119px;
+    max-width: 50%;
     font-size: 24px;
-    margin-top: 3px;
+    margin-top: 15px;
 }
 
 .calk__square-set::placeholder {
@@ -421,7 +421,7 @@
     margin-bottom: auto;
     line-height: 29px;
     font-size: 24px;
-    margin-right: 48px;
+    margin-right: 26px;
     cursor: pointer;
     padding: 17px 22px;
     background-color: inherit;
@@ -719,7 +719,8 @@
     .poject__accent,
     .discount__main,
     .main__customers,
-    .calk__fone {
+    .calk__fone,
+    .footer__fons {
         margin-left: 1px;
     }
 
