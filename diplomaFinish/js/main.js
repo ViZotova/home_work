@@ -121,21 +121,7 @@ slides.forEach(slide => {
 
 
     // Инициализация Swiper
-const swiper = new Swiper('.image-slider', {
-    slidesPerView: 1,
-    // Arrow
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-    },
-    on: {
-        slideChange: function () {
-            const currentIndex = this.realIndex + 1; 
-            const totalSlides = this.slides.length; 
-            document.querySelector('.project__pagination').textContent = `$\{currentIndex\}/$\{totalSlides\}`; 
-        },
-    },
-});
+
 
 
 const totalSlides = swiper.slides.length;
