@@ -58,7 +58,7 @@ burgerMenu('.header__block');
 
 // ==========ACCOR=========
 
-const tabControls2 = document.querySelectorAll('.tab-conrols__media');
+const tabControls2 = document.querySelectorAll('.tab-controls-media');
 const tabContents = document.querySelectorAll('.about__slide-media');
 
 tabControls2.forEach((tab, index) => {
