@@ -189,11 +189,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-          //Модальное окно -1
+                //Модальное окно -1
     const modal = document.querySelector('.modal') 
     const modalButton = document.querySelector('.header__button')
 
-    modalButton.addEventListenear('click', openModal) 
+    modalButton.addEventListener('click', openModal) 
     modal.addEventListener('click', closeModal) //
 
     function openModal(e) {
@@ -209,7 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.remove('body--opened-modal')
         }
     }
-
     //Модальное окно -2
 
 // Загрузка
