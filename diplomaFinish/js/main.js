@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.querySelector('.modal') 
     const modalButton = document.querySelector('.header__button')
 
-    modalButton.addEventListeneår('click', openModal) 
+    modalButton.addEventListenear('click', openModal) 
     modal.addEventListener('click', closeModal) //
 
     function openModal(e) {
