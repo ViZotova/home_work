@@ -696,6 +696,18 @@
     .footer__logo img {
         margin-bottom: 24px;
     }
+
+    .footer__nav {
+        margin-bottom: 53px;
+    }
+
+    .footer__nav-list {
+        display: block;
+    }
+
+    .footer__nav-item {
+        margin-bottom: 16px;
+    }
 }
 
 @media (max-width: 800px) {
@@ -877,34 +889,16 @@
         margin-top: 40px;
     }
 
-    .footer__info-text span {
-        font-size: 14px;
+    .footer__btn {
+        display: none;
     }
 
     .footer__info-number {
-        font-size: 33px;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 36px;
     }
 
-    .footer__btn {
-        margin-top: 10px;
-    }
-
-    .footer__info-add,
-    .footer__info-cont {
-        font-size: 15px;
-    }
-
-    .footer__info-cont {
-        margin-bottom: 40px;
-    }
-
-    .footer__nav {
-        margin-bottom: 16px;
-    }
-
-    .footer__nav-link {
-        font-size: 10px;
-    }
 
 }
 
@@ -940,6 +934,7 @@
     .calk__btn {
         margin-left: 14%;
     }
+
 }
 
 @media (max-width: 500px) {
@@ -1042,5 +1037,16 @@
     .footer__intro {
         padding-bottom: 30px;
         padding-left: 5%;
+    }
+
+    .footer__info-add,
+    .footer__info-cont {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+
+    .footer__info-cont span {
+        margin-right: 100px;
     }
 }
