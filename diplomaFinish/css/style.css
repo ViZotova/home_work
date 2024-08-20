@@ -381,13 +381,15 @@
 }
 
 .calk__col {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr; */
+    display: flex;
 }
 
 .calk__box {
     margin-bottom: 88px;
 }
+
 
 .calk__box-text {
     font-size: 18px;
@@ -396,9 +398,9 @@
 
 .calk__square-set {
     border-bottom: 1px solid var(--color-gray);
-    max-width: 140px;
+    max-width: 119px;
     font-size: 24px;
-    margin-top: 15px;
+    margin-top: 3px;
 }
 
 .calk__square-set::placeholder {
@@ -422,6 +424,7 @@
     margin-right: 48px;
     cursor: pointer;
     padding: 17px 22px;
+    background-color: inherit;
 }
 
 .calk__box-link span {
