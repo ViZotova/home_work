@@ -132,7 +132,7 @@
     top: 0;
     bottom: 0;
     width: 102px;
-    right: 70px;
+    right: 93px;
 }
 
 .image-slider__image {
@@ -156,7 +156,7 @@
 }
 
 .swiper-button-next {
-    margin-right: 7%;
+    margin-right: 9%;
 }
 
 /* ------------ */
@@ -176,9 +176,11 @@
 }
 
 .project__info-est {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-left: 50px;
+    margin-left: 14.7%; */
+    display: flex;
+    margin-left: 125px;
 }
 
 .project__accent {
@@ -194,6 +196,7 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 27px;
+    margin-left: 66px;
 }
 
 /* ========= */
@@ -208,7 +211,7 @@
     bottom: 32px;
     display: flex;
     gap: 8px;
-    left: 536px;
+    left: 38%;
 }
 
 .pagination div {
