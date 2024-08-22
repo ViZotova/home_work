@@ -511,18 +511,15 @@
     /* ===================DISCONT===== */
 
     .discont__adap-media {
-        margin-left: 103px;
-        text-align: center;
+        margin-left: 3px;
     }
 
-    /* .discont__cost-global {
-        display: block;
-    } */
-
-
     .discont__cost-img {
-        max-width: 510px;
-        height: 325px;
+        max-width: 450px;
+    }
+
+    .discont__cost-prices {
+        margin-right: 5px;
     }
 
     /* ===================CALK===== */
