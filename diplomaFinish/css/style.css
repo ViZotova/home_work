@@ -368,7 +368,7 @@
 }
 
 .calk__fone {
-    margin-bottom: var(--accent-mb);
+    margin-bottom: none;
 }
 
 .calk__title {
