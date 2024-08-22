@@ -269,7 +269,7 @@
 
 .discont__adap {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .discont__cost-option {
