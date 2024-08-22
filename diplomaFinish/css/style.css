@@ -20,6 +20,10 @@
     margin-bottom: 32px;
 }
 
+.tabs {
+    margin-bottom: 56px;
+}
+
 .tab-controls {
     display: flex;
     margin-bottom: 52px;
