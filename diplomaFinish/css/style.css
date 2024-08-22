@@ -364,8 +364,11 @@
 /* =========CALK============= */
 
 .calk {
-    margin-bottom: var(--accent-mb);
     background: var(--accent-bg);
+}
+
+.calk__fone {
+    margin-bottom: var(--accent-mb);
 }
 
 .calk__title {
@@ -386,7 +389,6 @@
 .calk__box {
     margin-bottom: 88px;
 }
-
 
 .calk__box-text {
     font-size: 18px;
